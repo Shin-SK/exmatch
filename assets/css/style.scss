@@ -1,0 +1,400 @@
+@use "../css/global/global" as *;
+@use "../css/global/reset" as *;
+
+@import url(https://use.typekit.net/lpz2crc.css);
+// font-family: "mina", serif;
+// font-weight: 400;
+// font-style: normal;
+
+$mc: #004C71;
+$pink: #F07884;
+$lb: #EAF2F4;
+
+@mixin dotBg{
+    background-color: $lb;
+    background-image:
+    radial-gradient(white 30%, transparent 30%);
+    background-size: 20px 20px;
+}
+
+html{
+    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    -ms-overflow-style: none;
+    /*Firefoxへの対応*/
+    scrollbar-width: none;
+    /*Google Chrome、Safariへの対応*/
+    &::-webkit-scrollbar{
+        display: none;
+    } 
+}
+
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    &__wrap{
+        @include flex();
+    }
+}
+
+button{
+    background-color: $mc;
+    border: unset;
+    box-shadow: unset;
+    border-radius: 100px;
+    width: 100%;
+    a{
+        width: 100%;
+        color: white;
+        text-decoration: none;
+        padding: 8px;
+        @include flex();
+    }
+}
+
+main{
+    .kv{
+        position: relative;
+        &::before, &::after{
+            content: 'This Moment';
+            font-family: "mina", serif;
+            @include fs(30);
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $mc;
+            background-color: white;
+            z-index: 999;
+            padding: 0px 8px;
+        }
+        &::after{
+            content:'This Time';
+            left: unset;
+            top: unset;
+            right: 0;
+            bottom: 0;
+        }
+        &__wrap{
+            width: 100%;
+            height: 100vh;
+            @include flex();
+            position: relative;
+            &::before{
+                content: '';
+                border: 1px $mc solid;
+                width: 95%;
+                height: 95%;
+                position: absolute;
+            }
+            >div{
+                width: 50%;
+            }
+            .box{
+                @include flex();
+                flex-direction: column;
+                color: $mc;
+                .t1{
+                    letter-spacing: 10px;
+                    margin-bottom: 16px;
+                }
+                .logo{
+                    margin-bottom: 16px;
+                    img{
+                        max-width: 300px;
+                        width: 100%;
+                    }
+                }
+                button{
+                    width: 50%;
+                    margin-bottom: 40px;
+                }
+                .maru{
+                    @include flex();
+                    gap: 40px;
+                    >a{
+                        border-radius: 100%;
+                        border: 1px $mc solid;
+                        @include flex();
+                        flex-direction: column;
+                        text-align: center;
+                        height: 100px;
+                        width: 100px;
+                        color: $mc;
+                        line-height: 100%;
+                        @include fs(12);
+                        gap: 8px;
+                    }
+                    .oik{
+                        &::before{
+                            font: var(--fa-font-solid);
+                            content: '\f002';
+                            color: $mc;
+                            @include fs(30);
+                        }
+                    }
+                    .idk{
+                        border: 1px $pink solid;
+                        color: $pink;
+                        &::before{
+                            font: var(--fa-font-solid);
+                            content: '\f3c5';
+                            color: $pink;
+                            @include fs(30);
+                        }
+                    }
+                }
+            }//box
+        }//__wrap
+    }//kv
+    .midashi{
+        @include flex();
+        flex-direction: column;
+        .h1{
+            @include fs(35);
+            color: $mc;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        p{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .banner{
+            width: 100%;
+            &__wrap{
+                a{
+                    display: block;
+                    img{
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }//midashi
+
+    .feature{
+        @include dotBg();
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            border: 5px white solid;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 95%;
+            height: 95%;
+        }
+        &__wrap{
+            padding: 40px 0px;
+        }
+        &__area{
+            .title{
+                @include flex();
+                gap: 24px;
+                @include fs(30);
+                font-weight: bold;
+                color: $mc;
+                letter-spacing: 10px;
+                &::before, &::after{
+                    content: '';
+                    background-image: url(../images/fuki1.svg);
+                    width: 20px;
+                    height: 20px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                }
+                &::after{
+                    transform: scaleX(-1);
+                }
+            }
+            .area{
+                @include flex();
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 16px;
+                flex: 1;
+                .box{
+                    @include flex();
+                    flex-direction: column;
+                    .point{
+                        @include fs(20);
+                        font-weight: bold;
+                        @include flex();
+                        gap: 16px;
+                        justify-content: flex-start;
+                        width: 100%;
+                        margin-bottom: 8px;
+                        line-height: 100%;
+                    }
+                    img{
+                        aspect-ratio: 1/1;
+                        max-height: 300px;
+                    }
+                    p{
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }//feature
+
+    .btn__area{
+        @include flex();
+        gap: 40px;
+        >button{
+            color: white;
+            padding: 8px;
+            @include fs(20);
+            @include flex();
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .male{
+            &::before{
+                font: var(--fa-font-solid);
+                content: '\f183';
+                @include fs(20);
+            }
+        }
+        .female{
+            background-color: $pink;
+            &::before{
+                font: var(--fa-font-solid);
+                content: '\f182';
+                @include fs(20);
+            }
+        }
+        .imadoko{
+            background-color: $pink;
+            &::before{
+                font: var(--fa-font-solid);
+                content: '\f3c5';
+                @include fs(20);
+            }
+        }
+    }
+    .oaite{
+        .title{
+            @include flex();
+            @include fs(40);
+            font-weight: bold;
+            letter-spacing: 20px;
+            color: $mc;
+            &::before{
+                font: var(--fa-font-solid);
+                content: '\f002';
+                color: $mc;
+                @include fs(40);
+            }
+        }
+        p{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .oaite__wrap{
+            @include flex();
+            overflow-x: auto;
+            white-space: nowrap; /* 子要素が改行しないようにする */
+            justify-content: flex-start;
+            .box{
+                flex-shrink: 0;
+                .image{
+                    position: relative;
+                    z-index: 0;
+                    img{
+                        max-width: 250px;
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .info{
+                    position: absolute;
+                    padding: 4px;
+                    height: auto;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    z-index: 1;
+                    background-color: rgba($color: white, $alpha: 0.5); // 赤色、透明度50%
+                    @include flex();
+                    gap: 4px;
+                    .name{
+                        font-weight: bold;
+                        &::after{
+                            content: '/';
+                            margin-left: 4px;
+                            font-weight: normal;
+                        }
+                    }
+                    .age{
+
+                    }
+                    .lciq{
+                        margin-left: 8px;
+                        @include fs(20);
+                        @include flex();
+                        align-items: baseline;
+                        &::after{
+                            content: '/LCIQ';
+                            @include fs(12);
+                            font-family: $mincho;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+    }//oaite
+
+    .imadoko{
+        .title{
+            @include flex();
+            @include fs(40);
+            font-weight: bold;
+            letter-spacing: 20px;
+            color: $pink;
+            &::before{
+                font: var(--fa-font-solid);
+                content: '\f3c5';
+                color: $pink;
+                @include fs(40);
+            }
+        }
+        p{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        iframe{
+            width: 100%;
+            aspect-ratio: 16/9;
+            height: auto;
+        }
+    }
+    .cv{
+        @include dotBg();
+        @include flex();
+        min-height: 120px;
+        flex-direction: column;
+        gap: 16px;
+        padding: 40px 0px;
+        .catch{
+            text-align: center;
+            font-weight: bold;
+            color: $mc;
+        }
+        button{
+            width: 50%;
+            a{
+                font-weight: bold;
+            }
+        }
+    }
+}//main

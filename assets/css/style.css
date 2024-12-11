@@ -1,0 +1,629 @@
+@charset "UTF-8";
+@import url(https://use.typekit.net/lpz2crc.css);
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+body a {
+  color: #0f0f0f;
+}
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.8;
+}
+body img {
+  max-width: 100%;
+  height: auto;
+}
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+#navigation {
+  opacity: 0;
+  visibility: hidden; /* 見えなくするが、スペースを維持 */
+  transition: opacity 0.5s ease-in-out;
+}
+
+#navigation.visible {
+  opacity: 1;
+  visibility: visible; /* 表示状態 */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding: 8px;
+  background-color: white;
+  z-index: 99999;
+  box-shadow: 0px 0px 15px -5px #777777;
+}
+.nav__wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__wrap .logo img {
+  height: 50px;
+}
+@media screen and (max-width: 768px) {
+  .nav__wrap .logo img {
+    height: 30px;
+  }
+}
+.nav__wrap .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+@media screen and (max-width: 768px) {
+  .nav__wrap .menu {
+    display: none;
+  }
+}
+
+.drawer-hamburger {
+  top: unset;
+  width: 30px;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .drawer-hamburger {
+    display: block;
+  }
+}
+
+.drawer-nav {
+  background-color: #fafafa;
+}
+.drawer-nav ul .logo {
+  padding-left: 10px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start;
+}
+.drawer-nav ul li {
+  border-bottom: 1px gray dotted;
+}
+.drawer-nav ul li a {
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.drawer-nav ul li a::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.drawer-nav ul li a:hover {
+  background-color: white;
+  text-decoration: none;
+  color: black;
+}
+
+/* ナビの背景を前面に出す */
+.drawer--right.drawer-open .drawer-nav {
+  width: 100%;
+}
+
+/* アイコンの位置 */
+.drawer--right.drawer-open .drawer-hamburger {
+  right: 0;
+}
+
+body {
+  line-height: normal;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+}
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .kv {
+  position: relative;
+}
+main .kv::before, main .kv::after {
+  content: "This Moment";
+  font-family: "mina", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #004C71;
+  background-color: white;
+  z-index: 999;
+  padding: 0px 8px;
+}
+main .kv::after {
+  content: "This Time";
+  left: unset;
+  top: unset;
+  right: 0;
+  bottom: 0;
+}
+main .kv__wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main .kv__wrap::before {
+  content: "";
+  border: 1px #004C71 solid;
+  width: 95%;
+  height: 95%;
+  position: absolute;
+}
+main .kv__wrap > div {
+  width: 50%;
+}
+main .kv__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #004C71;
+}
+main .kv__wrap .box .t1 {
+  letter-spacing: 10px;
+  margin-bottom: 16px;
+}
+main .kv__wrap .box .logo {
+  margin-bottom: 16px;
+}
+main .kv__wrap .box .logo img {
+  max-width: 300px;
+  width: 100%;
+}
+main .kv__wrap .box button {
+  width: 50%;
+  margin-bottom: 40px;
+}
+main .kv__wrap .box .maru {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+main .kv__wrap .box .maru > a {
+  border-radius: 100%;
+  border: 1px #004C71 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  color: #004C71;
+  line-height: 100%;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  gap: 8px;
+}
+main .kv__wrap .box .maru .oik::before {
+  font: var(--fa-font-solid);
+  content: "\f002";
+  color: #004C71;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+main .kv__wrap .box .maru .idk {
+  border: 1px #F07884 solid;
+  color: #F07884;
+}
+main .kv__wrap .box .maru .idk::before {
+  font: var(--fa-font-solid);
+  content: "\f3c5";
+  color: #F07884;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+main .midashi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .midashi .h1 {
+  font-size: clamp(3.5rem, 3.4346938776rem + 0.2040816327vw, 3.7rem);
+  color: #004C71;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+main .midashi p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main .midashi .banner {
+  width: 100%;
+}
+main .midashi .banner__wrap a {
+  display: block;
+}
+main .midashi .banner__wrap a img {
+  margin: 0 auto;
+}
+main .feature {
+  background-color: #EAF2F4;
+  background-image: radial-gradient(white 30%, transparent 30%);
+  background-size: 20px 20px;
+  position: relative;
+}
+main .feature::after {
+  content: "";
+  position: absolute;
+  border: 5px white solid;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 95%;
+  height: 95%;
+}
+main .feature__wrap {
+  padding: 40px 0px;
+}
+main .feature__area .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  font-weight: bold;
+  color: #004C71;
+  letter-spacing: 10px;
+}
+main .feature__area .title::before, main .feature__area .title::after {
+  content: "";
+  background-image: url(../images/fuki1.svg);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+main .feature__area .title::after {
+  transform: scaleX(-1);
+}
+main .feature__area .area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+main .feature__area .area .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .feature__area .area .box .point {
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 8px;
+  line-height: 100%;
+}
+main .feature__area .area .box img {
+  aspect-ratio: 1/1;
+  max-height: 300px;
+}
+main .feature__area .area .box p {
+  max-width: 300px;
+}
+main .btn__area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+main .btn__area > button {
+  color: white;
+  padding: 8px;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+main .btn__area .male::before {
+  font: var(--fa-font-solid);
+  content: "\f183";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+main .btn__area .female {
+  background-color: #F07884;
+}
+main .btn__area .female::before {
+  font: var(--fa-font-solid);
+  content: "\f182";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+main .btn__area .imadoko {
+  background-color: #F07884;
+}
+main .btn__area .imadoko::before {
+  font: var(--fa-font-solid);
+  content: "\f3c5";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+main .oaite .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  font-weight: bold;
+  letter-spacing: 20px;
+  color: #004C71;
+}
+main .oaite .title::before {
+  font: var(--fa-font-solid);
+  content: "\f002";
+  color: #004C71;
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+}
+main .oaite p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main .oaite .oaite__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap; /* 子要素が改行しないようにする */
+  justify-content: flex-start;
+}
+main .oaite .oaite__wrap .box {
+  flex-shrink: 0;
+}
+main .oaite .oaite__wrap .box .image {
+  position: relative;
+  z-index: 0;
+}
+main .oaite .oaite__wrap .box .image img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+}
+main .oaite .oaite__wrap .box .info {
+  position: absolute;
+  padding: 4px;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+main .oaite .oaite__wrap .box .info .name {
+  font-weight: bold;
+}
+main .oaite .oaite__wrap .box .info .name::after {
+  content: "/";
+  margin-left: 4px;
+  font-weight: normal;
+}
+main .oaite .oaite__wrap .box .info .lciq {
+  margin-left: 8px;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: baseline;
+}
+main .oaite .oaite__wrap .box .info .lciq::after {
+  content: "/LCIQ";
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  margin-left: 4px;
+}
+main .imadoko .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  font-weight: bold;
+  letter-spacing: 20px;
+  color: #F07884;
+}
+main .imadoko .title::before {
+  font: var(--fa-font-solid);
+  content: "\f3c5";
+  color: #F07884;
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+}
+main .imadoko p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+main .imadoko iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+}
+main .cv {
+  background-color: #EAF2F4;
+  background-image: radial-gradient(white 30%, transparent 30%);
+  background-size: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 0px;
+}
+main .cv .catch {
+  text-align: center;
+  font-weight: bold;
+  color: #004C71;
+}
+main .cv button {
+  width: 50%;
+}
+main .cv button a {
+  font-weight: bold;
+}/*# sourceMappingURL=style.css.map */
