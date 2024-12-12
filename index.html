@@ -1,19 +1,75 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EXMATCH</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EXMATCH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="drawer drawer--right">
-    <header class="header" data-include="header"></header>
+    <header class="header">
+        <div class="header__wrap">
+    
+            <nav id="navigation" class="nav">
+        
+                <div class="nav__wrap d-md-flex d-none">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="assets/images/logo.svg">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#feature">特徴</a></li>
+                            <li><a href="#oaite">お相手検索</a></li>
+                            <li><a href="#imadoko">いまドコ検索</a></li>
+                            <li><a href="#price">料金</a></li>
+                        </ul>
+                        <div class="login">
+                            <a href="/">
+                                <span>ログイン</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav__sp d-md-none d-flex">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <button type="button" class="drawer-toggle drawer-hamburger">
+                        <span class="sr-only">toggle navigation</span>
+                        <span class="drawer-hamburger-icon"></span>
+                    </button>
+                </div>
+                <aside class="drawer-nav drawer-close" role="navigation">
+                    <div class="nav-inner drawer-menu">
+                        <ul>
+                            <li><a href="#feature">特徴</a></li>
+                            <li><a href="#oaite">お相手検索</a></li>
+                            <li><a href="#imadoko">いまドコ検索</a></li>
+                            <li><a href="#price">料金</a></li>
+                        </ul>
+                        <div class="login">
+                            <a href="/">
+                                <span>ログイン</span>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </nav>
+        
+        </div>        
+    </header>
+    
     <main>
         <section class="kv">
             <div class="kv__line">
@@ -26,10 +82,10 @@
                     <div class="logo"><img src="assets/images/logo.svg" alt=""></div>
                     <button><a href="">さっそくはじめる</a></button>
                     <div class="maru">
-                        <a class="oik" href="/" data-color="blue">
+                        <a class="oik" href="#oaite" data-color="blue">
                             お相手<br>検索
                         </a>
-                        <a class="idk" href="/" data-color="pink">
+                        <a class="idk" href="#imadoko" data-color="pink">
                             いまドコ<br>検索
                         </a>
                     </div>
@@ -39,7 +95,7 @@
                 </div> 
             </div>
         </section>
-        <section class="midashi container">
+        <section class="midashi container" id="midashi">
             <div class="h1">
                 本気だけど、手軽に出会いたい。<br>
                 そんな願いをかなえました。
@@ -63,7 +119,7 @@
             </div>
         </section>
 
-        <section class="feature">
+        <section class="feature" id="feature">
             <div class="feature__wrap">
                 <div class="container">
                     <div class="feature__area">
@@ -99,26 +155,16 @@
             </div>
         </section>
 
-        <section class="oaite">
+        <section class="oaite" id="oaite">
             <div class="container">
                 <div class="mainTitle">お相手検索</div>
                 <p>真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！的なテキストを。真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！</p>
                 <div class="btn__area">
-                    <button class="male" data-color="blue">男性</button>
-                    <button class="female" data-color="pink">女性</button>
+                    <button class="male" data-color="blue" data-toggle="male">男性</button>
+                    <button class="female" data-color="pink" data-toggle="female">女性</button>
                 </div>
-                <div class="oaite__loop swiper">
+                <div class="oaite__loop swiper" id="female">
                     <div class="oaite__wrap swiper-wrapper">
-                        <div class="box swiper-slide">
-                            <div class="image">
-                                <img src="assets/images/smp1.webp" alt="">
-                                <div class="info">
-                                    <div class="name">サンプル子</div>
-                                    <div class="age">00</div>
-                                    <div class="lciq">00</div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="box swiper-slide">
                             <div class="image">
                                 <img src="assets/images/smp1.webp" alt="">
@@ -171,7 +217,7 @@
                         </div>
                         <div class="box swiper-slide">
                             <div class="image">
-                                <img src="assets/images/smp1.webp" alt="">
+                                <img src="assets/images/smp6.webp" alt="">
                                 <div class="info">
                                     <div class="name">サンプル子</div>
                                     <div class="age">00</div>
@@ -181,7 +227,7 @@
                         </div>
                         <div class="box swiper-slide">
                             <div class="image">
-                                <img src="assets/images/smp2.webp" alt="">
+                                <img src="assets/images/smp7.webp" alt="">
                                 <div class="info">
                                     <div class="name">サンプル子</div>
                                     <div class="age">00</div>
@@ -191,7 +237,7 @@
                         </div>
                         <div class="box swiper-slide">
                             <div class="image">
-                                <img src="assets/images/smp3.webp" alt="">
+                                <img src="assets/images/smp8.webp" alt="">
                                 <div class="info">
                                     <div class="name">サンプル子</div>
                                     <div class="age">00</div>
@@ -201,7 +247,122 @@
                         </div>
                         <div class="box swiper-slide">
                             <div class="image">
-                                <img src="assets/images/smp4.webp" alt="">
+                                <img src="assets/images/smp9.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp10.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- swiper -->
+                <div class="oaite__loop swiper" id="male">
+                    <div class="oaite__wrap swiper-wrapper">
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp1-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp2-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp3-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp4-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp5-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp6-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp7-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp8-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp9-m.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp10-m.webp" alt="">
                                 <div class="info">
                                     <div class="name">サンプル子</div>
                                     <div class="age">00</div>
@@ -214,15 +375,15 @@
             </div>
         </section>
 
-        <section class="imadoko">
-            <div class="container">
+        <section class="imadoko" id="imadoko">
+            <div class="container click__wrap">
                 <div class="mainTitle">いまドコ検索</div>
                 <p>真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！的なテキストを。真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！</p>
                 
-                <div class="btn__area">
+                <div class="btn__area" data-toggle="click">
                     <button class="imadoko" data-color="pink">いまドコ</button>
                 </div>
-                <div class="map">
+                <div class="map" id="contents" style="display: none;">
                     <div class="map__area">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7701644594345!2d139.69906087655377!3d35.65803387259467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1733829897743!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -230,8 +391,9 @@
             </div>
         </section>
 
+
         <section class="cv">
-            <div class="container">
+            <div class="cv__wrap container">
                 <div class="catch">出会いは、すぐそこに。</div>
                 <button>
                     <a href="">
@@ -241,7 +403,7 @@
             </div>
         </section>
 
-        <section class="merit">
+        <section class="merit" id="merit">
             <div class="container">
                 <div class="mainTitle">エクスマッチの特徴</div>
                 <div class="merit__wrap">
@@ -277,7 +439,7 @@
         </section>
 
         <section class="cv">
-            <div class="container">
+            <div class="cv__wrap container">
                 <div class="catch">出会いは、すぐそこに。</div>
                 <button>
                     <a href="">
@@ -287,7 +449,7 @@
             </div>
         </section>
 
-        <section class="price">
+        <section class="price" id="price">
             <div class="container">
                 <div class="mainTitle">料金</div>
                 <div class="subtitle">
@@ -341,7 +503,8 @@
                 </div>
             </div><!-- container -->
         </section>
-        <section class="security">
+
+        <section class="security" id="security">
             <div class="container">
                 <div class="mainTitle">
                     セキュリティ
@@ -370,7 +533,7 @@
             </div><!-- container -->
         </section>
 
-        <section class="faq">
+        <section class="faq" id="faq">
             <div class="container">
                 <div class="mainTitle">FAQ</div>
                 <div class="subtitle">聞きたいことも聞きにくいこともあるやろうけど、ここでだいたい分かるで！的なテキスト聞きたいことも聞きにくいこともあるやろうけど、ここでだいたい分かるで！的なテキスト</div>
@@ -445,7 +608,7 @@
         </section>
 
         <section class="cv">
-            <div class="container">
+            <div class="cv__wrap container">
                 <div class="catch">出会いは、すぐそこに。</div>
                 <button>
                     <a href="">
@@ -454,6 +617,7 @@
                 </button>
             </div>
         </section>
+
     </main>
     <footer class="footer">
         <div class="mockup">
@@ -489,10 +653,9 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/drawer@3.2.2/dist/js/drawer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
     <script src="https://kit.fontawesome.com/66f29bbc2b.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>

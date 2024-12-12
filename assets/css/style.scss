@@ -143,6 +143,94 @@ button{
 
 }
 
+//■■■■■■■■■■■ ナビゲーション ■■■■■■■■■■■ //
+
+.nav{
+    &__wrap{
+        .logo{
+            height: auto;
+            img{
+                height: 40px;
+            }
+        }
+        .menu{
+            @include flex();
+            gap: 40px;
+            ul{
+                @include flex();
+                gap: 40px;
+            }
+            .login{
+                padding: 8px 16px;
+                border-radius: 100px;
+                background-color: $pink;
+                color: white;
+                span{
+                    @include flex();
+                    gap: 8px;
+                    &::before{
+                        font: var(--fa-font-solid);
+                        content: '\f090';
+                        color: white;
+                        @include fs(12);
+                    }
+                }
+            }   
+        }
+    }
+    &__sp{
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            z-index: 99999;
+            img{
+                height: 35px;
+            }
+        }
+    }//__sp
+    .nav-inner{
+        @include flex();
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        ul{
+            width: 100%;
+            padding-top: 60px;
+            li{
+                border-bottom: 1px $mc dotted;
+                &:first-child{
+                    border-top: 1px $mc dotted;
+                }
+                a{
+                    &::after{
+                        font: var(--fa-font-solid);
+                        content: '\f105';
+                        @include fs(16);
+                        color: $mc;
+                    }
+                }
+            }
+        }
+        .login{
+            padding: 8px 16px;
+            border-radius: 100px;
+            background-color: $pink;
+            color: white;
+            margin-bottom: 100px;
+            width: 90%;
+            span{
+                @include flex();
+                gap: 8px;
+                &::before{
+                    font: var(--fa-font-solid);
+                    content: '\f090';
+                    color: white;
+                    @include fs(12);
+                }
+            }
+        }
+    }
+}
 
 
 
@@ -387,6 +475,7 @@ main{
         @include md{
             @include fs(25);
             letter-spacing: normal;
+            margin-bottom: 16px;
         }
     }
     .feature{
@@ -538,8 +627,10 @@ main{
                     img{
                         max-width: 250px;
                         width: 100%;
-                        height: auto;
+                        height: 100%;
                         border-radius: 8px;
+                        object-fit: cover;
+                        aspect-ratio: 1/1;
                     }
                 }
                 .info{
@@ -605,24 +696,28 @@ main{
         @include dotBg();
         @include flex();
         min-height: 120px;
-        flex-direction: column;
         gap: 16px;
         padding: 40px 0px;
-        .catch{
-            text-align: center;
-            font-weight: bold;
-            color: $mc;
-            margin-bottom: 16px;
-        }
-        button{
-            width: 50%;
-            @include md{
-                width: 100%;
-            }
-            a{
+        &__wrap{
+            @include flex();
+            flex-direction: column;
+            .catch{
+                text-align: center;
                 font-weight: bold;
+                color: $mc;
+                margin-bottom: 16px;
+            }
+            button{
+                width: 50%;
+                @include md{
+                    width: 100%;
+                }
+                a{
+                    font-weight: bold;
+                }
             }
         }
+
     }
     .merit{
         &__wrap{

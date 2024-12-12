@@ -7,10 +7,30 @@ $(document).ready(function() {
       $('.drawer').drawer('close');
     });
 });
+
+
+$(document).ready(function() {
+    // midashiの位置を取得
+    var blockPosition = $('#midashi').offset().top; // #midashi の位置を取得
+    var isVisible = false; // 現在の表示状態を保持するフラグ
+
+    $(window).on('scroll', function() {
+        var scrollTop = $(this).scrollTop(); // 現在のスクロール位置を取得
+        if (scrollTop > blockPosition && !isVisible) {
+            $('#navigation').addClass('visible'); // visibleクラスを付与
+            isVisible = true;
+        } else if (scrollTop <= blockPosition && isVisible) {
+            $('#navigation').removeClass('visible'); // visibleクラスを削除
+            setTimeout(() => $('#navigation').css('visibility', 'hidden'), 500); // visibilityをhiddenに
+            isVisible = false;
+        }
+    });
+});
+
   
 $(document).ready(function () {
     $("[data-toggle='click']").on("click", function () {
-        const wrap = $(this).closest(".box"); // 親のwrapを取得
+        const wrap = $(this).closest(".box, .click__wrap"); // 親のwrapを取得
         const target = wrap.find("#contents"); // ターゲットの#contentsを取得
 
         // 表示・非表示を切り替え
@@ -23,6 +43,21 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$(document).ready(function() {
+    // 初期表示設定
+    $("#male").hide();
+    $("#female").show();
+
+    // ボタンクリック時のイベント
+    $(".btn__area button").on("click", function() {
+        const targetId = $(this).data("toggle"); // data-toggle の値を取得
+        $(".oaite__loop").hide(); // すべて非表示
+        $("#" + targetId).fadeIn(); // 対象をフェードイン
+    });
+});
+
 
 // 1つ目のSwiper
 const bannerSwiper = new Swiper('.banner', {
