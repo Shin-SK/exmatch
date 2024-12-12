@@ -8,6 +8,7 @@
 
 $mc: #004C71;
 $pink: #F07884;
+$green: #706C00;
 $lb: #EAF2F4;
 
 @mixin dotBg{
@@ -45,6 +46,10 @@ button{
     box-shadow: unset;
     border-radius: 100px;
     width: 100%;
+    transition: background-color 0.3s ease; 
+    &:hover {
+        background-color:lighten($mc, 10%);
+    }
     a{
         width: 100%;
         color: white;
@@ -53,6 +58,96 @@ button{
         @include flex();
     }
 }
+
+[data-color="blue"]{
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    &:hover{
+        background-color: $mc !important;
+        border: unset !important;
+        color: white !important;
+        opacity: 1;
+        * {
+            color: inherit !important;
+        }
+        &::before,
+        &::after {
+            color: inherit !important; // 疑似要素にも継承を明示
+        }
+    }
+}
+
+[data-color="pink"]{
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+    &:hover{
+        background-color: $pink !important;
+        border: unset !important;
+        color: white !important;
+        opacity: 1;
+        * {
+            color: inherit !important;
+        }
+        &::before,
+        &::after {
+            color: inherit !important; // 疑似要素にも継承を明示
+        }
+    }
+}
+
+//■■■■■■■■■■■ swiper ■■■■■■■■■■■ //
+
+.banner{
+    &.swiper {
+        width: 100%;
+        max-width: 1200px; /* 最大幅を設定（任意） */
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .swiper-pagination{
+        position: relative;
+        margin-top: 24px;
+    }
+    
+    .swiper-slide img {
+        width: 100%;
+    }
+    
+    .swiper-slide-prev,
+    .swiper-slide-next {
+        transform: scale(0.9); /* 少し縮小 */
+        opacity: 0.5; /* 薄く表示 */
+    }
+    
+    .swiper-slide-active {
+        transform: scale(1); /* 通常サイズ */
+        opacity: 1; /* はっきり表示 */
+    }
+}
+
+.oaite__loop{
+    &.swiper {
+        width: 100%;
+        overflow: hidden; /* スライダー外の要素を隠す */
+    }
+    
+    .swiper-slide {
+        width: auto; /* コンテンツの幅に合わせる */
+        @include flex();
+    }
+
+}
+
+
+
+
+//■■■■■■■■■■■ トップ コンテンツ ■■■■■■■■■■■ //
+
 
 main{
     .kv{
@@ -65,9 +160,12 @@ main{
             left: 0;
             top: 0;
             color: $mc;
-            background-color: white;
             z-index: 999;
             padding: 0px 8px;
+            @include md{
+                @include fs(20);
+                color: white;
+            }
         }
         &::after{
             content:'This Time';
@@ -76,25 +174,104 @@ main{
             right: 0;
             bottom: 0;
         }
+        &__line{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            .migi,
+            .hidari {
+                /* 共通のスタイル */
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                }
+            }
+            /* 右上 */
+            .migi {
+                &::before {//水平
+                    width: 70vw;
+                    height: 1px;
+                    top: 20px;
+                    right: 20px;
+                    background-color: $mc;
+                    transform-origin: top right;
+                    @include md{
+                        width: 30vw;
+                        background-color: white;
+                    }
+                }
+            
+                &::after {//垂直
+                    height: 85vh;
+                    width: 1px;
+                    top: 20px;
+                    right: 20px;
+                    background-color: $mc;
+                    transform-origin: top right;
+                    @include md{
+                        background-color: white;
+                    }
+                }
+            }
+            
+            /* 左下 */
+            .hidari {
+                &::before {//水平
+                    width: 70vw;
+                    height: 1px;
+                    bottom: 20px;
+                    left: 20px;
+                    background-color: $mc; /* 線の色 */
+                    transform-origin: bottom left;
+                    @include md{
+                        width: 30vw;
+                        background-color: white;
+                    }
+                }
+            
+                &::after {//垂直
+                    height: 85vh;
+                    width: 1px;
+                    bottom: 20px;
+                    left: 20px;
+                    background-color: $mc; /* 線の色 */
+                    transform-origin: bottom left;
+                    @include md{
+                        background-color: white;
+                    }
+                }
+            }
+                        
+        }
         &__wrap{
             width: 100%;
             height: 100vh;
             @include flex();
             position: relative;
-            &::before{
-                content: '';
-                border: 1px $mc solid;
-                width: 95%;
-                height: 95%;
-                position: absolute;
+            @include md{
+                flex-direction: column;
+                background-image: url(../images/kv.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
             }
             >div{
                 width: 50%;
+                @include md{
+                    width: 100%;
+                }
             }
             .box{
                 @include flex();
                 flex-direction: column;
                 color: $mc;
+                z-index: 999;
+                @include md{
+                    padding: 24px;
+                    background-color: rgba(255, 255, 255, 0.9); // 透明度30%の白  
+                }
                 .t1{
                     letter-spacing: 10px;
                     margin-bottom: 16px;
@@ -104,11 +281,17 @@ main{
                     img{
                         max-width: 300px;
                         width: 100%;
+                        @include md{
+                            max-width: 100%;
+                        }
                     }
                 }
                 button{
                     width: 50%;
                     margin-bottom: 40px;
+                    @include md{
+                        width: 100%;
+                    }
                 }
                 .maru{
                     @include flex();
@@ -146,6 +329,17 @@ main{
                     }
                 }
             }//box
+            .image{
+                height: 50vh;
+                @include md{
+                    display: none;
+                }
+                img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain
+                }
+            }
         }//__wrap
     }//kv
     .midashi{
@@ -157,24 +351,44 @@ main{
             text-align: center;
             font-weight: bold;
             margin-bottom: 16px;
+            @include md{
+                @include fs(20);
+            }
         }
         p{
             text-align: center;
             margin-bottom: 40px;
         }
         .banner{
-            width: 100%;
             &__wrap{
+                width: 70%;
+                margin: 0 auto;
+                @include md{
+                    width: 100%;
+                }
                 a{
                     display: block;
+                    height: 80px;
                     img{
-                        margin: 0 auto;
+                        height: 100%;
+                        width: auto;
+                        object-fit: contain;
                     }
                 }
             }
         }
     }//midashi
-
+    .mainTitle{
+        @include flex();
+        @include fs(30);
+        font-weight: bold;
+        color: $mc;
+        letter-spacing: 10px;
+        @include md{
+            @include fs(25);
+            letter-spacing: normal;
+        }
+    }
     .feature{
         @include dotBg();
         position: relative;
@@ -194,13 +408,9 @@ main{
             padding: 40px 0px;
         }
         &__area{
-            .title{
-                @include flex();
+            z-index: 10;
+            .mainTitle{
                 gap: 24px;
-                @include fs(30);
-                font-weight: bold;
-                color: $mc;
-                letter-spacing: 10px;
                 &::before, &::after{
                     content: '';
                     background-image: url(../images/fuki1.svg);
@@ -216,10 +426,14 @@ main{
             }
             .area{
                 @include flex();
-                justify-content: space-between;
+                justify-content: space-around;
                 align-items: flex-start;
                 gap: 16px;
                 flex: 1;
+                @include md{
+                    flex-direction: column;
+                    align-items: center;
+                }
                 .box{
                     @include flex();
                     flex-direction: column;
@@ -257,14 +471,20 @@ main{
             margin-bottom: 16px;
         }
         .male{
+            border: 1px $mc solid;
+            color: $mc;
+            background: white;
             &::before{
                 font: var(--fa-font-solid);
                 content: '\f183';
                 @include fs(20);
+                color: $mc;
             }
         }
         .female{
-            background-color: $pink;
+            border: 1px $pink solid;
+            color: $pink;
+            background: white;
             &::before{
                 font: var(--fa-font-solid);
                 content: '\f182';
@@ -272,21 +492,28 @@ main{
             }
         }
         .imadoko{
-            background-color: $pink;
+            border-radius: 100%;
+            border: 1px $pink solid;
+            @include flex();
+            flex-direction: column;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+            color: $pink;
+            line-height: 100%;
+            @include fs(12);
+            gap: 8px;
+            background-color: white;
             &::before{
                 font: var(--fa-font-solid);
                 content: '\f3c5';
-                @include fs(20);
+                color: $pink;
+                @include fs(30);
             }
         }
     }
     .oaite{
-        .title{
-            @include flex();
-            @include fs(40);
-            font-weight: bold;
-            letter-spacing: 20px;
-            color: $mc;
+        .mainTitle{
             &::before{
                 font: var(--fa-font-solid);
                 content: '\f002';
@@ -301,8 +528,7 @@ main{
 
         .oaite__wrap{
             @include flex();
-            overflow-x: auto;
-            white-space: nowrap; /* 子要素が改行しないようにする */
+            white-space: nowrap;
             justify-content: flex-start;
             .box{
                 flex-shrink: 0;
@@ -313,6 +539,7 @@ main{
                         max-width: 250px;
                         width: 100%;
                         height: auto;
+                        border-radius: 8px;
                     }
                 }
                 .info{
@@ -334,9 +561,6 @@ main{
                             font-weight: normal;
                         }
                     }
-                    .age{
-
-                    }
                     .lciq{
                         margin-left: 8px;
                         @include fs(20);
@@ -355,11 +579,7 @@ main{
     }//oaite
 
     .imadoko{
-        .title{
-            @include flex();
-            @include fs(40);
-            font-weight: bold;
-            letter-spacing: 20px;
+        .mainTitle{
             color: $pink;
             &::before{
                 font: var(--fa-font-solid);
@@ -376,6 +596,9 @@ main{
             width: 100%;
             aspect-ratio: 16/9;
             height: auto;
+            @include md{
+                aspect-ratio: 1/1;
+            }
         }
     }
     .cv{
@@ -389,12 +612,334 @@ main{
             text-align: center;
             font-weight: bold;
             color: $mc;
+            margin-bottom: 16px;
         }
         button{
             width: 50%;
+            @include md{
+                width: 100%;
+            }
             a{
                 font-weight: bold;
             }
         }
     }
+    .merit{
+        &__wrap{
+            @include flex();
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 40px;
+            .box{
+                width: 100%;
+                flex: 1;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                align-items: center;
+                gap: 40px;
+                @include md{
+                    grid-template-columns: 1fr;
+                }
+                &:nth-child(2){
+                    .image{
+                        order: 2;
+                        @include md{
+                            order: 1;
+                        }
+                    }
+                    .text{
+                        order: 1;
+                        @include md{
+                            order: 2;
+                        }
+                    }
+                }
+                .image{
+                    img{
+                        width: 100%;
+                    }
+                }
+                .text{
+                    .title{
+                        font-weight: bold;
+                        @include fs(20);
+                    }
+                }
+            }
+        }
+    }//merit
+
+    .subtitle{
+        text-align: center;
+        margin-top: 24px;
+        @include md{
+            margin-top: 8px;
+        }
+        span{
+            display: block;
+            @include fs(10);
+            text-align: center;
+        }
+    }
+
+    .price{
+        &__wrap{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            overflow-x: auto;
+            padding: 16px;
+            .box{
+                @include flex();
+                flex-direction: column;
+                gap: 16px;
+                padding: 80px 16px;
+                box-shadow: 0px 0px 15px -10px #777777;
+                justify-content: flex-start;
+                min-width: 300px;
+                .numb{
+                    @include fs(60);
+                    font-weight: bold;
+                    height: 100px;
+                    &::before{
+                        content: '¥';
+                        @include fs(30);
+                        margin-right: 8px;
+                    }
+                    span{
+                        display: block;
+                        text-align: center;
+                        @include fs(10);
+                        width: 100%;
+                        font-weight: normal;
+                    }
+                }
+                .plan{
+                    @include fs(25);
+                    font-weight: bold;
+                    text-align: center;
+                    span{
+                        display: block;
+                        text-align: center;
+                        @include fs(10);
+                    }
+                }
+                .disc{
+                    text-align: center;
+                    @include fs(12);
+                }
+                button{
+                    background-color: $mc;
+                    transition: background-color 0.3s ease;
+                    &:hover{
+                        background-color: lighten($mc, 10%);
+                    }
+                    a{
+                        color: white;
+                        display: block;
+                        font-weight: bold;
+                        padding: 8px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                ul{
+                    li{
+                        @include fs(12);
+                        margin-bottom: 4px;
+                        &::before{
+                            font: var(--fa-font-solid);
+                            content: '\f00c';
+                            color: $mc;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }//box
+            .free{
+                button{
+                    background-color: $green;
+                    &:hover{
+                        background-color: lighten($green, 10%);
+                    }
+                }
+                ul{
+                    li{
+                        &::before{
+                            color: $green;
+                        }
+                    }
+                }
+            }
+            .advanced{
+                button{
+                    background-color: $pink;
+                    &:hover{
+                        background-color: lighten($pink, 10%);
+                    }
+                }
+                ul{
+                    li{
+                        &::before{
+                            color: $pink;
+                        }
+                    }
+                }
+            }
+        }
+    }//price
+    .security{
+        &__wrap{
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 40px;
+            @include md{
+                grid-template-columns: repeat(2,1fr);
+            }
+            .box{
+                @include flex();
+                flex-direction: column;
+                gap: 8px;
+                span{
+                    @include fs(10);
+                }
+            }
+        }
+    }//security
+
+    .faq{
+        &__wrap{
+            margin-top: 40px;
+            .box{
+                margin-bottom: 16px;
+                .q{
+                    padding: 0px 16px;
+                    width: 100%;
+                    .title{
+                        color: $mc;
+                        &::before{
+                            content: 'Q';
+                            @include fs(40);
+                            font-weight: bold;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .a{
+                    background-color: $lb;
+                    padding: 8px 16px;
+                    width: 100%;
+                    .title{
+                        color: $pink;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                        &::before{
+                            content: 'A';
+                            @include fs(40);
+                            font-weight: bold;
+                            margin-right: 8px;
+                        }
+                        &::after {
+                            font: var(--fa-font-solid);
+                            content: '\f105'; // 矢印のアイコン
+                            color: $pink;
+                            display: inline-block;
+                            transition: transform 0.3s ease; // アニメーションを追加
+                        }
+                        // クリック時の回転
+                        &.active::after {
+                            transform: rotate(90deg); // 90度回転
+                        }
+                    }
+                }
+            }//box
+        }//__wrap
+    }//faq
+
 }//main
+
+.footer{
+    padding-top: 260px;
+    @include md{
+        padding-top: 130px;
+    }
+    .mockup{
+        position: relative;
+        height: 100px;
+        background-color: $lb;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $lb; // 背景色
+            transform: skewY(-4deg); // 傾きを設定
+            transform-origin: top left;
+            z-index: 0; // 背景として配置
+        }
+        img{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+    .contents{
+        background-color: $lb;
+    }
+    .sns{
+        @include flex();
+        justify-content: space-around;
+        img{
+            max-height: 50px;
+        }
+    }
+    &__wrap{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 40px;
+        align-items: center;
+        @include md{
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .logo{
+            img{
+                max-width: 200px;
+                @include md{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+        ul{
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(4, auto);
+            gap: 4px;
+            @include md{
+                grid-auto-flow: row;
+                justify-items: center; /* 中央揃えを維持 */
+            }
+            li{
+                a{
+                    @include fs(12);
+                }
+            }
+        }
+    }
+    .cr{
+        text-align: center;
+        padding: 40px 0px;
+        @include md{
+            
+        }
+    }
+}

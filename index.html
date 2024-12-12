@@ -7,26 +7,29 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="drawer drawer--right">
     <header class="header" data-include="header"></header>
     <main>
         <section class="kv">
+            <div class="kv__line">
+                <div class="migi"></div>
+                <div class="hidari"></div>
+            </div>
             <div class="kv__wrap">
                 <div class="box">
                     <div class="t1">いまここで出会う。</div>
                     <div class="logo"><img src="assets/images/logo.svg" alt=""></div>
                     <button><a href="">さっそくはじめる</a></button>
                     <div class="maru">
-                        <a class="oik" href="">
+                        <a class="oik" href="/" data-color="blue">
                             お相手<br>検索
                         </a>
-                        <a class="idk" href="">
+                        <a class="idk" href="/" data-color="pink">
                             いまドコ<br>検索
                         </a>
                     </div>
@@ -47,12 +50,16 @@
                 本気で、手軽に。<br>
                 相性のいい相手としか出会うことができないサービスです。
             </p>
-            <div class="banner">
-                <div class="banner__wrap">
-                    <a href=""><img src="assets/images/banner1.webp" alt=""></a>
-                    <a href=""><img src="assets/images/banner2.webp" alt=""></a>
-                    <a href=""><img src="assets/images/banner3.webp" alt=""></a>
+            <div class="banner swiper">
+                <div class="banner__wrap swiper-wrapper">
+                    <a class="swiper-slide" href=""><img src="assets/images/banner1.webp" alt=""></a>
+                    <a class="swiper-slide" href=""><img src="assets/images/banner2.webp" alt=""></a>
+                    <a class="swiper-slide" href=""><img src="assets/images/banner3.webp" alt=""></a>
+                    <a class="swiper-slide" href=""><img src="assets/images/banner1.webp" alt=""></a>
+                    <a class="swiper-slide" href=""><img src="assets/images/banner2.webp" alt=""></a>
+                    <a class="swiper-slide" href=""><img src="assets/images/banner3.webp" alt=""></a>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -60,7 +67,7 @@
             <div class="feature__wrap">
                 <div class="container">
                     <div class="feature__area">
-                        <div class="title">3つの特徴</div>
+                        <div class="mainTitle">3つの特徴</div>
                         <div class="area">
                             <div class="box">
                                 <div class="point">
@@ -94,125 +101,126 @@
 
         <section class="oaite">
             <div class="container">
-                <div class="title">お相手検索</div>
+                <div class="mainTitle">お相手検索</div>
                 <p>真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！的なテキストを。真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！</p>
                 <div class="btn__area">
-                    <button class="male">男性</button>
-                    <button class="female">女性</button>
+                    <button class="male" data-color="blue">男性</button>
+                    <button class="female" data-color="pink">女性</button>
                 </div>
-                <div class="oaite__wrap">
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp1.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
+                <div class="oaite__loop swiper">
+                    <div class="oaite__wrap swiper-wrapper">
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp1.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp1.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp2.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp3.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp4.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp5.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp1.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp2.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp3.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box swiper-slide">
+                            <div class="image">
+                                <img src="assets/images/smp4.webp" alt="">
+                                <div class="info">
+                                    <div class="name">サンプル子</div>
+                                    <div class="age">00</div>
+                                    <div class="lciq">00</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp1.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp2.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp3.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp4.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp5.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp1.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp2.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp3.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="image">
-                            <img src="assets/images/smp4.webp" alt="">
-                            <div class="info">
-                                <div class="name">サンプル子</div>
-                                <div class="age">00</div>
-                                <div class="lciq">00</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                </div><!-- swiper -->
             </div>
         </section>
 
         <section class="imadoko">
             <div class="container">
-                <div class="title">いまドコ検索</div>
+                <div class="mainTitle">いまドコ検索</div>
                 <p>真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！的なテキストを。真剣に出会いを求めている方がこれだけいらっしゃいます。真剣な出会いを！</p>
                 
                 <div class="btn__area">
-                    <button class="imadoko">いまドコ</button>
+                    <button class="imadoko" data-color="pink">いまドコ</button>
                 </div>
                 <div class="map">
                     <div class="map__area">
@@ -223,21 +231,265 @@
         </section>
 
         <section class="cv">
-            <div class="catch">出会いは、すぐそこに。</div>
-            <button>
-                <a href="">
-                    さあはじめよう
-                </a>
-            </button>
+            <div class="container">
+                <div class="catch">出会いは、すぐそこに。</div>
+                <button>
+                    <a href="">
+                        さあはじめよう
+                    </a>
+                </button>
+            </div>
         </section>
 
+        <section class="merit">
+            <div class="container">
+                <div class="mainTitle">エクスマッチの特徴</div>
+                <div class="merit__wrap">
+                    <div class="box">
+                        <div class="image"><img src="assets/images/merit1.webp" alt=""></div>
+                        <div class="text">
+                            <div class="title">LCIQ診断で相性を徹底検証</div>
+                            <p>
+                                LCIQ はすごい信頼度バツグンとにかく LCIQ で診断しときゃ間違いないんだ的なテキスト LCIQ はすごい信頼度バツグンとにかく LCIQで診断しときゃ間違いないんだ的なテキスト LCIQ はすごい信頼度バツグンとにかく LCIQ で診断しときゃ間違いないんだ的なテキスト 
+                            </p>
+                        </div>
+                    </div><!-- box -->
+                    <div class="box">
+                        <div class="image"><img src="assets/images/merit2.webp" alt=""></div>
+                        <div class="text">
+                            <div class="title">相性がいい人からいいねがくる</div>
+                            <p>
+                                LCIQ がすごいから相性がわかって向こうにとっても相性がいい人がわかるからいいねが来るってことは相性がいいってことなんや的なテキスト LCIQ がすごいから相性がわかって向こうにとっても相性がいい人がわかるからいいねが来るってことは相性がいいってことなんや的なテキスト
+                            </p>
+                        </div>
+                    </div><!-- box -->
+                    <div class="box">
+                        <div class="image"><img src="assets/images/merit3.webp" alt=""></div>
+                        <div class="text">
+                            <div class="title">自分を変えられる</div>
+                            <p>
+                                点数低くても安心しろいトライサポートがあるんだぜ点数低くても安心しろいトライサポートがあるんだぜ点数低くても安心しろいトライサポートがあるんだぜ点数低くても安心しろいトライサポートがあるんだぜ
+                            </p>
+                        </div>
+                    </div><!-- box -->
+                </div>
+            </div>
+        </section>
+
+        <section class="cv">
+            <div class="container">
+                <div class="catch">出会いは、すぐそこに。</div>
+                <button>
+                    <a href="">
+                        さあはじめよう
+                    </a>
+                </button>
+            </div>
+        </section>
+
+        <section class="price">
+            <div class="container">
+                <div class="mainTitle">料金</div>
+                <div class="subtitle">
+                    一般的な結婚相談所での料金は、成婚まで平均して約30万円前後*。<br>
+                    エクスマッチのスタンダードプランが高いと思うか、安いと感じるか。<br>
+                    それはあなた次第です。
+                    <span>*当社調べの中央値。初期費用(約104,500円)、月会費(約21,450円)、成婚料(約220,000円)で計算。</span>
+                </div>
+
+                <div class="price__wrap">
+                    <div class="box free">
+                        <div class="numb">0</div>
+                        <div class="plan">フリー<span>FREE</span></div>
+                        <div class="disc">初めて婚活マッチングを利用する方に<br>ピッタリのお試しプラン</div>
+                        <button><a href="">無料ではじめる</a></button>
+                        <ul>
+                            <li>価値観診断</li>
+                            <li>価値観マッチ ( 価値観による紹介 )</li>
+                            <li>お相手のプロフィールを見る</li>
+                            <li>お相手に「いいね！」をする</li>
+                            <li>「いいね！」をくれた方とマッチングする ( 無制限 )</li>
+                            <li>非表示機能</li>
+                            <li>初回メッセージ１通のみ</li>
+                        </ul>
+                    </div>
+                    <div class="box standard">
+                        <div class="numb">4,500<span>¥4,950(税込)</span></div>
+                        <div class="plan">スタンダード<span>STANDARD</span></div>
+                        <div class="disc">すべての基本的な機能が利用できる<br>オールインクルーシブプラン</div>
+                        <button><a href="">いますぐはじめる</a></button>
+                        <ul>
+                            <li>お相手とのメッセージのやりとり(無制限)※本人・年齢確認必須</li>
+                            <li>「いいね！」できる回数が60回に回復（有料会員登録直後のみ）</li>
+                            <li>「いいね！」を送れる回数が、毎月60回に増量</li>
+                            <li>あなたを検索結果の上位に表示</li>
+                            <li>相手が今もらっている、「いいね！」数がわかる</li>
+                            <li>一部並び替え機能(「いいね！」の多い順、新着会 員順、ログイン順)</li>
+                            <li>足あとが5件以上見られる</li>
+                        </ul>
+                    </div>
+                    <div class="box advanced">
+                        <div class="numb">6,000<span>¥6,600(税込)</span></div>
+                        <div class="plan">アドバンス<span>ADVANCED</span></div>
+                        <div class="disc">深い部分の相性がわかる<br>追加オプション</div>
+                        <button><a href="">ホンキではじめる</a></button>
+                        <ul>
+                            <li>スタンダードプランのすべての機能が使える</li>
+                            <li>性癖のプロフィールが見れる</li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- container -->
+        </section>
+        <section class="security">
+            <div class="container">
+                <div class="mainTitle">
+                    セキュリティ
+                </div>
+                <div class="subtitle">
+                    GPS も使ってんだ、セキュリティに関してはめちゃくちゃこだわってるぜ！的なテキストGPS も使ってんだ、セキュリティに関してはめちゃくちゃこだわってるぜ！的なテキスト
+                </div>
+                <div class="security__wrap">
+                    <div class="box">
+                        <img src="assets/images/sc1.webp" alt="">
+                        <span>プライバシー<br>守ります</span>
+                    </div>
+                    <div class="box">
+                        <img src="assets/images/sc2.webp" alt="">
+                        <span>悪質ユーザー<br>取り締まり</span>
+                    </div>
+                    <div class="box">
+                        <img src="assets/images/sc3.webp" alt="">
+                        <span>万全の<br>サポート体制</span>
+                    </div>
+                    <div class="box">
+                        <img src="assets/images/sc4.webp" alt="">
+                        <span>高額請求<br>なし</span>
+                    </div>
+                </div>
+            </div><!-- container -->
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <div class="mainTitle">FAQ</div>
+                <div class="subtitle">聞きたいことも聞きにくいこともあるやろうけど、ここでだいたい分かるで！的なテキスト聞きたいことも聞きにくいこともあるやろうけど、ここでだいたい分かるで！的なテキスト</div>
+
+                <div class="faq__wrap">
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="q"><div class="title">無料で利用できますか？</div></div>
+                        <div class="a">
+                            <div class="title" data-toggle="click">はい、利用できます。</div>
+                            <p id="contents" style="display: none;">
+                                サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+           </div>
+        </section>
+
+        <section class="cv">
+            <div class="container">
+                <div class="catch">出会いは、すぐそこに。</div>
+                <button>
+                    <a href="">
+                        さあはじめよう
+                    </a>
+                </button>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 サンプルサイト</p>
+    <footer class="footer">
+        <div class="mockup">
+            <img src="assets/images/mockup.webp" alt="">
+        </div>
+        <div class="contents">
+            <div class="container">
+                <div class="sns">
+                    <a class="youtube" href="" target="_blank"><img src="assets/images/sns-youtube.webp" alt=""></a>
+                    <a class="tiktok" href="" target="_blank"><img src="assets/images/sns-tiktok.webp" alt=""></a>
+                </div>
+                <div class="footer__wrap">
+                    <div class="logo"><a href="/"><img src="assets/images/logo.svg" alt=""></a></div>
+                    <ul>
+                        <li><a href="/">会社概要</a></li>
+                        <li><a href="/">利用規約</a></li>
+                        <li><a href="/">安心・安全の取り組みとガイド</a></li>
+                        <li><a href="/">コミュニティガイドライン</a></li>
+                        <li><a href="/">プライバシーポリシー</a></li>
+                        <li><a href="/">クッキーポリシー</a></li>
+                        <li><a href="/">クッキー設定</a></li>
+                        <li><a href="/">特定商取引法に基づく表示</a></li>
+                        <li><a href="/">ヘルプ</a></li>
+                        <li><a href="/">法人･自治体向けサービス</a></li>
+                        <li><a href="/">採用サイト</a></li>
+                        <li><a href="/">記事提供元一覧</a></li>
+                    </ul>
+                </div>
+                <div class="cr"><a href="/">&copy; 2024 EXMATCH</a></div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/drawer@3.2.2/dist/js/drawer.min.js"></script>

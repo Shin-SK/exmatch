@@ -255,12 +255,88 @@ button {
   box-shadow: unset;
   border-radius: 100px;
   width: 100%;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #006ea4;
 }
 button a {
   width: 100%;
   color: white;
   text-decoration: none;
   padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+.banner.swiper {
+  width: 100%;
+  max-width: 1200px; /* 最大幅を設定（任意） */
+  margin: 0 auto;
+  overflow: hidden;
+}
+.banner .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.banner .swiper-pagination {
+  position: relative;
+  margin-top: 24px;
+}
+.banner .swiper-slide img {
+  width: 100%;
+}
+.banner .swiper-slide-prev,
+.banner .swiper-slide-next {
+  transform: scale(0.9); /* 少し縮小 */
+  opacity: 0.5; /* 薄く表示 */
+}
+.banner .swiper-slide-active {
+  transform: scale(1); /* 通常サイズ */
+  opacity: 1; /* はっきり表示 */
+}
+
+.oaite__loop.swiper {
+  width: 100%;
+  overflow: hidden; /* スライダー外の要素を隠す */
+}
+.oaite__loop .swiper-slide {
+  width: auto; /* コンテンツの幅に合わせる */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,9 +353,14 @@ main .kv::before, main .kv::after {
   left: 0;
   top: 0;
   color: #004C71;
-  background-color: white;
   z-index: 999;
   padding: 0px 8px;
+}
+@media screen and (max-width: 768px) {
+  main .kv::before, main .kv::after {
+    font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+    color: white;
+  }
 }
 main .kv::after {
   content: "This Time";
@@ -287,6 +368,78 @@ main .kv::after {
   top: unset;
   right: 0;
   bottom: 0;
+}
+main .kv__line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  /* 右上 */
+  /* 左下 */
+}
+main .kv__line .migi,
+main .kv__line .hidari {
+  /* 共通のスタイル */
+}
+main .kv__line .migi::before, main .kv__line .migi::after,
+main .kv__line .hidari::before,
+main .kv__line .hidari::after {
+  content: "";
+  position: absolute;
+}
+main .kv__line .migi::before {
+  width: 70vw;
+  height: 1px;
+  top: 20px;
+  right: 20px;
+  background-color: #004C71;
+  transform-origin: top right;
+}
+@media screen and (max-width: 768px) {
+  main .kv__line .migi::before {
+    width: 30vw;
+    background-color: white;
+  }
+}
+main .kv__line .migi::after {
+  height: 85vh;
+  width: 1px;
+  top: 20px;
+  right: 20px;
+  background-color: #004C71;
+  transform-origin: top right;
+}
+@media screen and (max-width: 768px) {
+  main .kv__line .migi::after {
+    background-color: white;
+  }
+}
+main .kv__line .hidari::before {
+  width: 70vw;
+  height: 1px;
+  bottom: 20px;
+  left: 20px;
+  background-color: #004C71; /* 線の色 */
+  transform-origin: bottom left;
+}
+@media screen and (max-width: 768px) {
+  main .kv__line .hidari::before {
+    width: 30vw;
+    background-color: white;
+  }
+}
+main .kv__line .hidari::after {
+  height: 85vh;
+  width: 1px;
+  bottom: 20px;
+  left: 20px;
+  background-color: #004C71; /* 線の色 */
+  transform-origin: bottom left;
+}
+@media screen and (max-width: 768px) {
+  main .kv__line .hidari::after {
+    background-color: white;
+  }
 }
 main .kv__wrap {
   width: 100%;
@@ -296,15 +449,22 @@ main .kv__wrap {
   align-items: center;
   position: relative;
 }
-main .kv__wrap::before {
-  content: "";
-  border: 1px #004C71 solid;
-  width: 95%;
-  height: 95%;
-  position: absolute;
+@media screen and (max-width: 768px) {
+  main .kv__wrap {
+    flex-direction: column;
+    background-image: url(../images/kv.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 main .kv__wrap > div {
   width: 50%;
+}
+@media screen and (max-width: 768px) {
+  main .kv__wrap > div {
+    width: 100%;
+  }
 }
 main .kv__wrap .box {
   display: flex;
@@ -312,6 +472,13 @@ main .kv__wrap .box {
   align-items: center;
   flex-direction: column;
   color: #004C71;
+  z-index: 999;
+}
+@media screen and (max-width: 768px) {
+  main .kv__wrap .box {
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 }
 main .kv__wrap .box .t1 {
   letter-spacing: 10px;
@@ -324,9 +491,19 @@ main .kv__wrap .box .logo img {
   max-width: 300px;
   width: 100%;
 }
+@media screen and (max-width: 768px) {
+  main .kv__wrap .box .logo img {
+    max-width: 100%;
+  }
+}
 main .kv__wrap .box button {
   width: 50%;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  main .kv__wrap .box button {
+    width: 100%;
+  }
 }
 main .kv__wrap .box .maru {
   display: flex;
@@ -365,6 +542,20 @@ main .kv__wrap .box .maru .idk::before {
   color: #F07884;
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
 }
+main .kv__wrap .image {
+  height: 50vh;
+}
+@media screen and (max-width: 768px) {
+  main .kv__wrap .image {
+    display: none;
+  }
+}
+main .kv__wrap .image img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 main .midashi {
   display: flex;
   justify-content: center;
@@ -378,18 +569,48 @@ main .midashi .h1 {
   font-weight: bold;
   margin-bottom: 16px;
 }
+@media screen and (max-width: 768px) {
+  main .midashi .h1 {
+    font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  }
+}
 main .midashi p {
   text-align: center;
   margin-bottom: 40px;
 }
-main .midashi .banner {
-  width: 100%;
+main .midashi .banner__wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  main .midashi .banner__wrap {
+    width: 100%;
+  }
 }
 main .midashi .banner__wrap a {
   display: block;
+  height: 80px;
 }
 main .midashi .banner__wrap a img {
-  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main .mainTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  font-weight: bold;
+  color: #004C71;
+  letter-spacing: 10px;
+}
+@media screen and (max-width: 768px) {
+  main .mainTitle {
+    font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+    letter-spacing: normal;
+  }
 }
 main .feature {
   background-color: #EAF2F4;
@@ -412,17 +633,13 @@ main .feature::after {
 main .feature__wrap {
   padding: 40px 0px;
 }
-main .feature__area .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
-  font-weight: bold;
-  color: #004C71;
-  letter-spacing: 10px;
+main .feature__area {
+  z-index: 10;
 }
-main .feature__area .title::before, main .feature__area .title::after {
+main .feature__area .mainTitle {
+  gap: 24px;
+}
+main .feature__area .mainTitle::before, main .feature__area .mainTitle::after {
   content: "";
   background-image: url(../images/fuki1.svg);
   width: 20px;
@@ -431,17 +648,23 @@ main .feature__area .title::before, main .feature__area .title::after {
   background-position: center;
   background-size: contain;
 }
-main .feature__area .title::after {
+main .feature__area .mainTitle::after {
   transform: scaleX(-1);
 }
 main .feature__area .area {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   gap: 16px;
   flex: 1;
+}
+@media screen and (max-width: 768px) {
+  main .feature__area .area {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 main .feature__area .area .box {
   display: flex;
@@ -484,13 +707,21 @@ main .btn__area > button {
   gap: 16px;
   margin-bottom: 16px;
 }
+main .btn__area .male {
+  border: 1px #004C71 solid;
+  color: #004C71;
+  background: white;
+}
 main .btn__area .male::before {
   font: var(--fa-font-solid);
   content: "\f183";
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  color: #004C71;
 }
 main .btn__area .female {
-  background-color: #F07884;
+  border: 1px #F07884 solid;
+  color: #F07884;
+  background: white;
 }
 main .btn__area .female::before {
   font: var(--fa-font-solid);
@@ -498,23 +729,28 @@ main .btn__area .female::before {
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
 }
 main .btn__area .imadoko {
-  background-color: #F07884;
+  border-radius: 100%;
+  border: 1px #F07884 solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  color: #F07884;
+  line-height: 100%;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  gap: 8px;
+  background-color: white;
 }
 main .btn__area .imadoko::before {
   font: var(--fa-font-solid);
   content: "\f3c5";
-  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  color: #F07884;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
 }
-main .oaite .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
-  font-weight: bold;
-  letter-spacing: 20px;
-  color: #004C71;
-}
-main .oaite .title::before {
+main .oaite .mainTitle::before {
   font: var(--fa-font-solid);
   content: "\f002";
   color: #004C71;
@@ -528,8 +764,7 @@ main .oaite .oaite__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: auto;
-  white-space: nowrap; /* 子要素が改行しないようにする */
+  white-space: nowrap;
   justify-content: flex-start;
 }
 main .oaite .oaite__wrap .box {
@@ -543,6 +778,7 @@ main .oaite .oaite__wrap .box .image img {
   max-width: 250px;
   width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 main .oaite .oaite__wrap .box .info {
   position: absolute;
@@ -580,16 +816,10 @@ main .oaite .oaite__wrap .box .info .lciq::after {
   font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   margin-left: 4px;
 }
-main .imadoko .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
-  font-weight: bold;
-  letter-spacing: 20px;
+main .imadoko .mainTitle {
   color: #F07884;
 }
-main .imadoko .title::before {
+main .imadoko .mainTitle::before {
   font: var(--fa-font-solid);
   content: "\f3c5";
   color: #F07884;
@@ -603,6 +833,11 @@ main .imadoko iframe {
   width: 100%;
   aspect-ratio: 16/9;
   height: auto;
+}
+@media screen and (max-width: 768px) {
+  main .imadoko iframe {
+    aspect-ratio: 1/1;
+  }
 }
 main .cv {
   background-color: #EAF2F4;
@@ -620,10 +855,320 @@ main .cv .catch {
   text-align: center;
   font-weight: bold;
   color: #004C71;
+  margin-bottom: 16px;
 }
 main .cv button {
   width: 50%;
 }
+@media screen and (max-width: 768px) {
+  main .cv button {
+    width: 100%;
+  }
+}
 main .cv button a {
   font-weight: bold;
+}
+main .merit__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+main .merit__wrap .box {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  main .merit__wrap .box {
+    grid-template-columns: 1fr;
+  }
+}
+main .merit__wrap .box:nth-child(2) .image {
+  order: 2;
+}
+@media screen and (max-width: 768px) {
+  main .merit__wrap .box:nth-child(2) .image {
+    order: 1;
+  }
+}
+main .merit__wrap .box:nth-child(2) .text {
+  order: 1;
+}
+@media screen and (max-width: 768px) {
+  main .merit__wrap .box:nth-child(2) .text {
+    order: 2;
+  }
+}
+main .merit__wrap .box .image img {
+  width: 100%;
+}
+main .merit__wrap .box .text .title {
+  font-weight: bold;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+main .subtitle {
+  text-align: center;
+  margin-top: 24px;
+}
+@media screen and (max-width: 768px) {
+  main .subtitle {
+    margin-top: 8px;
+  }
+}
+main .subtitle span {
+  display: block;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  text-align: center;
+}
+main .price__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  overflow-x: auto;
+  padding: 16px;
+}
+main .price__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 16px;
+  box-shadow: 0px 0px 15px -10px #777777;
+  justify-content: flex-start;
+  min-width: 300px;
+}
+main .price__wrap .box .numb {
+  font-size: clamp(6rem, 5.9346938776rem + 0.2040816327vw, 6.2rem);
+  font-weight: bold;
+  height: 100px;
+}
+main .price__wrap .box .numb::before {
+  content: "¥";
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  margin-right: 8px;
+}
+main .price__wrap .box .numb span {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  width: 100%;
+  font-weight: normal;
+}
+main .price__wrap .box .plan {
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+  font-weight: bold;
+  text-align: center;
+}
+main .price__wrap .box .plan span {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+main .price__wrap .box .disc {
+  text-align: center;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+main .price__wrap .box button {
+  background-color: #004C71;
+  transition: background-color 0.3s ease;
+}
+main .price__wrap .box button:hover {
+  background-color: #006ea4;
+}
+main .price__wrap .box button a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+}
+main .price__wrap .box ul li {
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  margin-bottom: 4px;
+}
+main .price__wrap .box ul li::before {
+  font: var(--fa-font-solid);
+  content: "\f00c";
+  color: #004C71;
+  margin-right: 4px;
+}
+main .price__wrap .free button {
+  background-color: #706C00;
+}
+main .price__wrap .free button:hover {
+  background-color: #a39d00;
+}
+main .price__wrap .free ul li::before {
+  color: #706C00;
+}
+main .price__wrap .advanced button {
+  background-color: #F07884;
+}
+main .price__wrap .advanced button:hover {
+  background-color: #f5a6ae;
+}
+main .price__wrap .advanced ul li::before {
+  color: #F07884;
+}
+main .security__wrap {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  main .security__wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+main .security__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+main .security__wrap .box span {
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+main .faq__wrap {
+  margin-top: 40px;
+}
+main .faq__wrap .box {
+  margin-bottom: 16px;
+}
+main .faq__wrap .box .q {
+  padding: 0px 16px;
+  width: 100%;
+}
+main .faq__wrap .box .q .title {
+  color: #004C71;
+}
+main .faq__wrap .box .q .title::before {
+  content: "Q";
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  font-weight: bold;
+  margin-right: 8px;
+}
+main .faq__wrap .box .a {
+  background-color: #EAF2F4;
+  padding: 8px 16px;
+  width: 100%;
+}
+main .faq__wrap .box .a .title {
+  color: #F07884;
+}
+main .faq__wrap .box .a .title:hover {
+  cursor: pointer;
+}
+main .faq__wrap .box .a .title::before {
+  content: "A";
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  font-weight: bold;
+  margin-right: 8px;
+}
+main .faq__wrap .box .a .title::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  color: #F07884;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+main .faq__wrap .box .a .title.active::after {
+  transform: rotate(90deg);
+}
+
+.footer {
+  padding-top: 260px;
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 130px;
+  }
+}
+.footer .mockup {
+  position: relative;
+  height: 100px;
+  background-color: #EAF2F4;
+}
+.footer .mockup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #EAF2F4;
+  transform: skewY(-4deg);
+  transform-origin: top left;
+  z-index: 0;
+}
+.footer .mockup img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.footer .contents {
+  background-color: #EAF2F4;
+}
+.footer .sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer .sns img {
+  max-height: 50px;
+}
+.footer__wrap {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .footer__wrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.footer__wrap .logo img {
+  max-width: 200px;
+}
+@media screen and (max-width: 768px) {
+  .footer__wrap .logo img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.footer__wrap ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, auto);
+  gap: 4px;
+}
+@media screen and (max-width: 768px) {
+  .footer__wrap ul {
+    grid-auto-flow: row;
+    justify-items: center; /* 中央揃えを維持 */
+  }
+}
+.footer__wrap ul li a {
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.footer .cr {
+  text-align: center;
+  padding: 40px 0px;
 }/*# sourceMappingURL=style.css.map */
