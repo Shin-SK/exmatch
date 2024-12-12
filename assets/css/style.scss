@@ -222,6 +222,7 @@ button{
             span{
                 @include flex();
                 gap: 8px;
+                color: white;
                 &::before{
                     font: var(--fa-font-solid);
                     content: '\f090';
