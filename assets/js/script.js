@@ -118,9 +118,9 @@ const newfaceSwiper = new Swiper('.newface', {
     },
 });
 
-const currentPage = window.location.pathname; // 現在のページパスを取得
+const currentPage = window.location.pathname.split("/").pop().replace(".html", ""); 
 document.querySelectorAll('.nav__wrap .menu ul li a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
-        link.classList.add('current'); // CSSクラスを付与
+    if (link.classList.contains(currentPage)) { 
+        link.classList.add('current');
     }
 });
