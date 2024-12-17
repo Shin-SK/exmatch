@@ -3068,27 +3068,25 @@ img {
     border-right: unset;
   }
 }
-.mypage main .score__wrap .lciq {
-  grid-area: lciq;
-}
 @media screen and (max-width: 768px) {
   .mypage main .score__wrap .lciq {
+    grid-area: lciq;
     border-right: 1px white solid;
   }
 }
-.mypage main .score__wrap .like {
-  grid-area: like;
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap .like {
+    grid-area: like;
+  }
 }
 .mypage main .score__wrap .like i {
   color: #F07884;
   margin-right: 4px;
 }
-.mypage main .score__wrap .prof {
-  grid-area: prof;
-}
 @media screen and (max-width: 768px) {
   .mypage main .score__wrap .prof {
     border-top: 1px white solid;
+    grid-area: prof;
   }
 }
 .mypage main .score__wrap .prof .numb {
