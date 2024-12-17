@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     // midashiの位置を取得
-    var blockPosition = $('#midashi').offset().top; // #midashi の位置を取得
+    var blockPosition = $('.index #midashi').offset().top; // #midashi の位置を取得
     var isVisible = false; // 現在の表示状態を保持するフラグ
 
     $(window).on('scroll', function() {
@@ -95,4 +95,32 @@ const oaiteLoopSwiper = new Swiper('.oaite__loop', {
   speed: 3000,
   freeMode: true,
   freeModeMomentum: false,
+});
+
+
+const newfaceSwiper = new Swiper('.newface', {
+    slidesPerView: "auto", // スライドの幅を自動調整
+    spaceBetween: 16, // スライド間の余白
+    loop: true, // ループ有効化
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+    speed: 3000, // 自動スクロールの速度
+    breakpoints: {
+        768: {
+            spaceBetween: 10, // 768px以下のとき、スライド間の余白を縮小
+        },
+    },
+});
+
+const currentPage = window.location.pathname; // 現在のページパスを取得
+document.querySelectorAll('.nav__wrap .menu ul li a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('current'); // CSSクラスを付与
+    }
 });

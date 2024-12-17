@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EXMATCH</title>
+    <script src="assets/js/include.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="drawer drawer--right base search free-user">
+    
+    <header class="header">
+
+        <div class="header__wrap">
+    
+            <nav id="navigation" class="nav">
+        
+                <div class="nav__wrap d-md-flex d-none">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="assets/images/logo.svg">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a class="search" href="/search.html">さがす</a></li>
+                            <li><a class="imadoko" href="/imadoko.html">いまどこ</a></li>
+                            <li><a class="apply" href="/apply.html">申込み</a></li>
+                            <li><a class="message" href="/message.html">メッセージ</a></li>
+                            <li><a class="mypage" href="/mypage.html">マイページ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="nav__sp d-md-none d-flex">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <button type="button" class="drawer-toggle drawer-hamburger">
+                        <span class="sr-only">toggle navigation</span>
+                        <span class="drawer-hamburger-icon"></span>
+                    </button>
+                </div>
+                <aside class="drawer-nav drawer-close" role="navigation">
+                    <div class="nav-inner drawer-menu">
+                        <ul>
+                            <li><a class="search" href="/search.html">さがす</a></li>
+                            <li><a class="imadoko" href="/imadoko.html">いまどこ</a></li>
+                            <li><a class="apply" href="/apply.html">申込み</a></li>
+                            <li><a class="message" href="/message.html">メッセージ</a></li>
+                            <li><a class="mypage" href="/mypage.html">マイページ</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </nav>
+        
+        </div>        
+    </header>
+
+    <main class="container">
+
+        <section class="advice">
+            <ul>
+                <li class="task"><a href="/mypage.html">プロフィールを充実させよう！</a></li>
+                <li class="question">
+                    <a href="/">
+                        <p>ぼかしをとるには？</p>
+                        <span>有料会員になるといいことがこんなにたくさん！</span>
+                    </a>
+                </li>
+                <li class="question">
+                    <a href="/">
+                        <p>無料と有料の違いは？</p>
+                        <span>全然違うよ！有料のほうが絶対おすすめ！</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="lciq">
+                <div class="logo">
+                    <img src="assets/images/lciq-logo.svg" alt="">
+                </div>
+                <p><a href="https://exm.lciq.jp/" target="_blank">まずは今の自分をしることから！（所要時間5〜10分）</a></p>
+            </div>
+        </section>
+
+        <section class="newface swiper">
+            <div class="head">
+                <div class="title">新規会員様</div><a href="/newface.html">もっと見る</a>
+            </div>
+            <div class="newface__wrap swiper-wrapper loop">
+                <div class="box swiper-slide">
+                    <div class="profile">
+                        <img src="assets/images/nf1.webp" alt="">
+                    </div>
+                    <p>22歳 神奈川</p>
+                </div>
+                <div class="box swiper-slide">
+                    <div class="profile">
+                        <img src="assets/images/nf2.webp" alt="">
+                    </div>
+                    <p>24歳 茨城</p>
+                </div>
+                <div class="box swiper-slide">
+                    <div class="profile">
+                        <img src="assets/images/nf3.webp" alt="">
+                    </div>
+                    <p>29歳 東京</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="feed">
+            <div class="feed__wrap loop">
+                <div class="box">
+                    <div class="box__wrap">
+                        <div class="profile image">
+                            <img src="assets/images/smp1.webp" alt="">
+                        </div>
+                        <div class="area">
+                            <div class="area__wrap">
+                                <div class="left">
+                                    <div class="name__area">
+                                        <span class="name">みさと</span>
+                                        <span class="age">24</span>
+                                        <span class="city">東京</span>
+                                    </div>
+                                    <div class="info__area">
+                                        <div class="title">職業</div>
+                                        <div class="job">看護師</div>
+                                        <div class="title">休日</div>
+                                        <div class="off">土日祝日</div>
+                                        <div class="title">マッチ後</div>
+                                        <div class="afterMatch">まずは会いたい</div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="lciq-point">85</div>
+                                    <div class="image"><img src="assets/images/lciq-sample.webp" alt=""></div>
+                                </div>
+                            </div>
+                            <p>
+                                みさとです。趣味は映画鑑賞、ゴルフ（まだヘタですが、、）旅行や温泉も好きです。
+                                職場など出会いがなく、将来も見据えて良い出会いがあればなと、登録してみました。よろしくお願いします。
+                            </p>
+                        </div><!-- area -->
+                    </div><!-- box__wrap -->
+                    <div class="btn__area">
+                        <button class="like" data-color="blue">いいね</button>
+                        <button class="message" data-color="pink">メッセージ</button>
+                    </div>
+                </div><!-- box -->
+            </div><!-- feed__wrap -->
+        </section>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="contents">
+            <div class="container">
+                <div class="footer__wrap">
+                    <div class="logo"><a href="/"><img src="assets/images/logo.svg" alt=""></a></div>
+                    <ul>
+                        <li><a href="/">会社概要</a></li>
+                        <li><a href="/">利用規約</a></li>
+                        <li><a href="/">安心・安全の取り組みとガイド</a></li>
+                        <li><a href="/">コミュニティガイドライン</a></li>
+                        <li><a href="/">プライバシーポリシー</a></li>
+                        <li><a href="/">クッキーポリシー</a></li>
+                        <li><a href="/">クッキー設定</a></li>
+                        <li><a href="/">特定商取引法に基づく表示</a></li>
+                        <li><a href="/">ヘルプ</a></li>
+                        <li><a href="/">法人･自治体向けサービス</a></li>
+                        <li><a href="/">採用サイト</a></li>
+                        <li><a href="/">記事提供元一覧</a></li>
+                    </ul>
+                </div>
+                <div class="cr"><a href="/">&copy; 2024 EXMATCH</a></div>
+            </div>
+        </div>
+    </footer>
+    
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+<script src="https://kit.fontawesome.com/66f29bbc2b.js" crossorigin="anonymous"></script>
+
+<script src="assets/js/loop.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

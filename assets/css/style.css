@@ -1,6 +1,12 @@
 @charset "UTF-8";
-@import url(https://use.typekit.net/lpz2crc.css);
 /* 除算math.divを使うのに必要な記述 */
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
 html {
   font-size: 62.5%;
 }
@@ -16,7 +22,7 @@ body a :hover {
   -webkit-transition: 0.5s; /* Chrome、Safari用 */
   -moz-transition: 0.5s; /* Firefox用 */
   -o-transition: 0.5s; /* Opera用 */
-  opacity: 0.8;
+  opacity: 0.5;
 }
 body img {
   max-width: 100%;
@@ -40,6 +46,344 @@ body section {
 .active {
   display: block;
   opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #006ea4;
+}
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
 }
 
 #navigation {
@@ -157,6 +501,130 @@ body {
   line-height: normal;
 }
 
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -230,6 +698,53 @@ img {
   width: auto;
 }
 
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
 html {
   /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
   -ms-overflow-style: none;
@@ -237,18 +752,13 @@ html {
   scrollbar-width: none;
   /*Google Chrome、Safariへの対応*/
 }
+
 html::-webkit-scrollbar {
   display: none;
 }
 
 a {
   text-decoration: none;
-}
-
-.header__wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 button {
@@ -259,9 +769,11 @@ button {
   width: 100%;
   transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #006ea4;
 }
+
 button a {
   width: 100%;
   color: white;
@@ -275,15 +787,18 @@ button a {
 [data-color=blue] {
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
+
 [data-color=blue]:hover {
   background-color: #004C71 !important;
   border: unset !important;
   color: white !important;
   opacity: 1;
 }
+
 [data-color=blue]:hover * {
   color: inherit !important;
 }
+
 [data-color=blue]:hover::before, [data-color=blue]:hover::after {
   color: inherit !important;
 }
@@ -291,156 +806,99 @@ button a {
 [data-color=pink] {
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
+
 [data-color=pink]:hover {
   background-color: #F07884 !important;
   border: unset !important;
   color: white !important;
   opacity: 1;
 }
+
 [data-color=pink]:hover * {
   color: inherit !important;
 }
+
 [data-color=pink]:hover::before, [data-color=pink]:hover::after {
   color: inherit !important;
 }
 
-.banner.swiper {
-  width: 100%;
-  max-width: 1200px; /* 最大幅を設定（任意） */
-  margin: 0 auto;
-  overflow: hidden;
-}
-.banner .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-.banner .swiper-pagination {
-  position: relative;
-  margin-top: 24px;
-}
-.banner .swiper-slide img {
-  width: 100%;
-}
-.banner .swiper-slide-prev,
-.banner .swiper-slide-next {
-  transform: scale(0.9); /* 少し縮小 */
-  opacity: 0.5; /* 薄く表示 */
-}
-.banner .swiper-slide-active {
-  transform: scale(1); /* 通常サイズ */
-  opacity: 1; /* はっきり表示 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
 }
 
-.oaite__loop.swiper {
-  width: 100%;
-  overflow: hidden; /* スライダー外の要素を隠す */
-}
-.oaite__loop .swiper-slide {
-  width: auto; /* コンテンツの幅に合わせる */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
-.nav__wrap .logo {
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
   height: auto;
-}
-.nav__wrap .logo img {
-  height: 40px;
-}
-.nav__wrap .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-.nav__wrap .menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-}
-.nav__wrap .menu .login {
-  padding: 8px 16px;
-  border-radius: 100px;
-  background-color: #F07884;
-  color: white;
-}
-.nav__wrap .menu .login span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: white;
-}
-.nav__wrap .menu .login span::before {
-  font: var(--fa-font-solid);
-  content: "\f090";
-  color: white;
-  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
-}
-.nav__sp {
-  justify-content: space-between;
-  align-items: center;
-}
-.nav__sp .logo {
-  z-index: 99999;
-}
-.nav__sp .logo img {
-  height: 35px;
-}
-.nav .nav-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.nav .nav-inner ul {
-  width: 100%;
-  padding-top: 60px;
-}
-.nav .nav-inner ul li {
-  border-bottom: 1px #004C71 dotted;
-}
-.nav .nav-inner ul li:first-child {
-  border-top: 1px #004C71 dotted;
-}
-.nav .nav-inner ul li a::after {
-  font: var(--fa-font-solid);
-  content: "\f105";
-  font-size: clamp(1.6rem, 1.5346938776rem + 0.2040816327vw, 1.8rem);
-  color: #004C71;
-}
-.nav .nav-inner .login {
-  padding: 8px 16px;
-  border-radius: 100px;
-  background-color: #F07884;
-  color: white;
-  margin-bottom: 100px;
-  width: 90%;
-}
-.nav .nav-inner .login span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  color: white;
-}
-.nav .nav-inner .login span::before {
-  font: var(--fa-font-solid);
-  content: "\f090";
-  color: white;
-  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  width: auto;
 }
 
-main .kv {
+.index main .kv {
   position: relative;
 }
-main .kv::before, main .kv::after {
+.index main .kv::before, .index main .kv::after {
   content: "This Moment";
   font-family: "mina", serif;
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
@@ -452,19 +910,19 @@ main .kv::before, main .kv::after {
   padding: 0px 8px;
 }
 @media screen and (max-width: 768px) {
-  main .kv::before, main .kv::after {
+  .index main .kv::before, .index main .kv::after {
     font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
     color: white;
   }
 }
-main .kv::after {
+.index main .kv::after {
   content: "This Time";
   left: unset;
   top: unset;
   right: 0;
   bottom: 0;
 }
-main .kv__line {
+.index main .kv__line {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -472,17 +930,17 @@ main .kv__line {
   /* 右上 */
   /* 左下 */
 }
-main .kv__line .migi,
-main .kv__line .hidari {
+.index main .kv__line .migi,
+.index main .kv__line .hidari {
   /* 共通のスタイル */
 }
-main .kv__line .migi::before, main .kv__line .migi::after,
-main .kv__line .hidari::before,
-main .kv__line .hidari::after {
+.index main .kv__line .migi::before, .index main .kv__line .migi::after,
+.index main .kv__line .hidari::before,
+.index main .kv__line .hidari::after {
   content: "";
   position: absolute;
 }
-main .kv__line .migi::before {
+.index main .kv__line .migi::before {
   width: 70vw;
   height: 1px;
   top: 20px;
@@ -491,12 +949,12 @@ main .kv__line .migi::before {
   transform-origin: top right;
 }
 @media screen and (max-width: 768px) {
-  main .kv__line .migi::before {
+  .index main .kv__line .migi::before {
     width: 30vw;
     background-color: white;
   }
 }
-main .kv__line .migi::after {
+.index main .kv__line .migi::after {
   height: 85vh;
   width: 1px;
   top: 20px;
@@ -505,11 +963,11 @@ main .kv__line .migi::after {
   transform-origin: top right;
 }
 @media screen and (max-width: 768px) {
-  main .kv__line .migi::after {
+  .index main .kv__line .migi::after {
     background-color: white;
   }
 }
-main .kv__line .hidari::before {
+.index main .kv__line .hidari::before {
   width: 70vw;
   height: 1px;
   bottom: 20px;
@@ -518,12 +976,12 @@ main .kv__line .hidari::before {
   transform-origin: bottom left;
 }
 @media screen and (max-width: 768px) {
-  main .kv__line .hidari::before {
+  .index main .kv__line .hidari::before {
     width: 30vw;
     background-color: white;
   }
 }
-main .kv__line .hidari::after {
+.index main .kv__line .hidari::after {
   height: 85vh;
   width: 1px;
   bottom: 20px;
@@ -532,11 +990,11 @@ main .kv__line .hidari::after {
   transform-origin: bottom left;
 }
 @media screen and (max-width: 768px) {
-  main .kv__line .hidari::after {
+  .index main .kv__line .hidari::after {
     background-color: white;
   }
 }
-main .kv__wrap {
+.index main .kv__wrap {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -545,7 +1003,7 @@ main .kv__wrap {
   position: relative;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap {
+  .index main .kv__wrap {
     flex-direction: column;
     background-image: url(../images/kv.webp);
     background-size: cover;
@@ -553,15 +1011,15 @@ main .kv__wrap {
     background-repeat: no-repeat;
   }
 }
-main .kv__wrap > div {
+.index main .kv__wrap > div {
   width: 50%;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap > div {
+  .index main .kv__wrap > div {
     width: 100%;
   }
 }
-main .kv__wrap .box {
+.index main .kv__wrap .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -570,43 +1028,43 @@ main .kv__wrap .box {
   z-index: 999;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap .box {
+  .index main .kv__wrap .box {
     padding: 24px;
     background-color: rgba(255, 255, 255, 0.9);
   }
 }
-main .kv__wrap .box .t1 {
+.index main .kv__wrap .box .t1 {
   letter-spacing: 10px;
   margin-bottom: 16px;
 }
-main .kv__wrap .box .logo {
+.index main .kv__wrap .box .logo {
   margin-bottom: 16px;
 }
-main .kv__wrap .box .logo img {
+.index main .kv__wrap .box .logo img {
   max-width: 300px;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap .box .logo img {
+  .index main .kv__wrap .box .logo img {
     max-width: 100%;
   }
 }
-main .kv__wrap .box button {
+.index main .kv__wrap .box button {
   width: 50%;
   margin-bottom: 40px;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap .box button {
+  .index main .kv__wrap .box button {
     width: 100%;
   }
 }
-main .kv__wrap .box .maru {
+.index main .kv__wrap .box .maru {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-main .kv__wrap .box .maru > a {
+.index main .kv__wrap .box .maru > a {
   border-radius: 100%;
   border: 1px #004C71 solid;
   display: flex;
@@ -621,43 +1079,43 @@ main .kv__wrap .box .maru > a {
   font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
   gap: 8px;
 }
-main .kv__wrap .box .maru .oik::before {
+.index main .kv__wrap .box .maru .oik::before {
   font: var(--fa-font-solid);
   content: "\f002";
   color: #004C71;
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
 }
-main .kv__wrap .box .maru .idk {
+.index main .kv__wrap .box .maru .idk {
   border: 1px #F07884 solid;
   color: #F07884;
 }
-main .kv__wrap .box .maru .idk::before {
+.index main .kv__wrap .box .maru .idk::before {
   font: var(--fa-font-solid);
   content: "\f3c5";
   color: #F07884;
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
 }
-main .kv__wrap .image {
+.index main .kv__wrap .image {
   height: 50vh;
 }
 @media screen and (max-width: 768px) {
-  main .kv__wrap .image {
+  .index main .kv__wrap .image {
     display: none;
   }
 }
-main .kv__wrap .image img {
+.index main .kv__wrap .image img {
   width: 100%;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .midashi {
+.index main .midashi {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main .midashi .h1 {
+.index main .midashi .h1 {
   font-size: clamp(3.5rem, 3.4346938776rem + 0.2040816327vw, 3.7rem);
   color: #004C71;
   text-align: center;
@@ -665,34 +1123,34 @@ main .midashi .h1 {
   margin-bottom: 16px;
 }
 @media screen and (max-width: 768px) {
-  main .midashi .h1 {
+  .index main .midashi .h1 {
     font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
   }
 }
-main .midashi p {
+.index main .midashi p {
   text-align: center;
   margin-bottom: 40px;
 }
-main .midashi .banner__wrap {
+.index main .midashi .banner__wrap {
   width: 70%;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
-  main .midashi .banner__wrap {
+  .index main .midashi .banner__wrap {
     width: 100%;
   }
 }
-main .midashi .banner__wrap a {
+.index main .midashi .banner__wrap a {
   display: block;
   height: 80px;
 }
-main .midashi .banner__wrap a img {
+.index main .midashi .banner__wrap a img {
   height: 100%;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .mainTitle {
+.index main .mainTitle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -702,19 +1160,19 @@ main .mainTitle {
   letter-spacing: 10px;
 }
 @media screen and (max-width: 768px) {
-  main .mainTitle {
+  .index main .mainTitle {
     font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
     letter-spacing: normal;
     margin-bottom: 16px;
   }
 }
-main .feature {
+.index main .feature {
   background-color: #EAF2F4;
   background-image: radial-gradient(white 30%, transparent 30%);
   background-size: 20px 20px;
   position: relative;
 }
-main .feature::after {
+.index main .feature::after {
   content: "";
   position: absolute;
   border: 5px white solid;
@@ -726,16 +1184,16 @@ main .feature::after {
   width: 95%;
   height: 95%;
 }
-main .feature__wrap {
+.index main .feature__wrap {
   padding: 40px 0px;
 }
-main .feature__area {
+.index main .feature__area {
   z-index: 10;
 }
-main .feature__area .mainTitle {
+.index main .feature__area .mainTitle {
   gap: 24px;
 }
-main .feature__area .mainTitle::before, main .feature__area .mainTitle::after {
+.index main .feature__area .mainTitle::before, .index main .feature__area .mainTitle::after {
   content: "";
   background-image: url(../images/fuki1.svg);
   width: 20px;
@@ -744,10 +1202,10 @@ main .feature__area .mainTitle::before, main .feature__area .mainTitle::after {
   background-position: center;
   background-size: contain;
 }
-main .feature__area .mainTitle::after {
+.index main .feature__area .mainTitle::after {
   transform: scaleX(-1);
 }
-main .feature__area .area {
+.index main .feature__area .area {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -757,18 +1215,18 @@ main .feature__area .area {
   flex: 1;
 }
 @media screen and (max-width: 768px) {
-  main .feature__area .area {
+  .index main .feature__area .area {
     flex-direction: column;
     align-items: center;
   }
 }
-main .feature__area .area .box {
+.index main .feature__area .area .box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main .feature__area .area .box .point {
+.index main .feature__area .area .box .point {
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
   font-weight: bold;
   display: flex;
@@ -780,20 +1238,20 @@ main .feature__area .area .box .point {
   margin-bottom: 8px;
   line-height: 100%;
 }
-main .feature__area .area .box img {
+.index main .feature__area .area .box img {
   aspect-ratio: 1/1;
   max-height: 300px;
 }
-main .feature__area .area .box p {
+.index main .feature__area .area .box p {
   max-width: 300px;
 }
-main .btn__area {
+.index main .btn__area {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 40px;
 }
-main .btn__area > button {
+.index main .btn__area > button {
   color: white;
   padding: 8px;
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
@@ -803,28 +1261,28 @@ main .btn__area > button {
   gap: 16px;
   margin-bottom: 16px;
 }
-main .btn__area .male {
+.index main .btn__area .male {
   border: 1px #004C71 solid;
   color: #004C71;
   background: white;
 }
-main .btn__area .male::before {
+.index main .btn__area .male::before {
   font: var(--fa-font-solid);
   content: "\f183";
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
   color: #004C71;
 }
-main .btn__area .female {
+.index main .btn__area .female {
   border: 1px #F07884 solid;
   color: #F07884;
   background: white;
 }
-main .btn__area .female::before {
+.index main .btn__area .female::before {
   font: var(--fa-font-solid);
   content: "\f182";
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
 }
-main .btn__area .imadoko {
+.index main .btn__area .imadoko {
   border-radius: 100%;
   border: 1px #F07884 solid;
   display: flex;
@@ -840,37 +1298,37 @@ main .btn__area .imadoko {
   gap: 8px;
   background-color: white;
 }
-main .btn__area .imadoko::before {
+.index main .btn__area .imadoko::before {
   font: var(--fa-font-solid);
   content: "\f3c5";
   color: #F07884;
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
 }
-main .oaite .mainTitle::before {
+.index main .oaite .mainTitle::before {
   font: var(--fa-font-solid);
   content: "\f002";
   color: #004C71;
   font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
 }
-main .oaite p {
+.index main .oaite p {
   text-align: center;
   margin-bottom: 40px;
 }
-main .oaite .oaite__wrap {
+.index main .oaite .oaite__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
   justify-content: flex-start;
 }
-main .oaite .oaite__wrap .box {
+.index main .oaite .oaite__wrap .box {
   flex-shrink: 0;
 }
-main .oaite .oaite__wrap .box .image {
+.index main .oaite .oaite__wrap .box .image {
   position: relative;
   z-index: 0;
 }
-main .oaite .oaite__wrap .box .image img {
+.index main .oaite .oaite__wrap .box .image img {
   max-width: 250px;
   width: 100%;
   height: 100%;
@@ -879,7 +1337,7 @@ main .oaite .oaite__wrap .box .image img {
      object-fit: cover;
   aspect-ratio: 1/1;
 }
-main .oaite .oaite__wrap .box .info {
+.index main .oaite .oaite__wrap .box .info {
   position: absolute;
   padding: 4px;
   height: auto;
@@ -893,15 +1351,15 @@ main .oaite .oaite__wrap .box .info {
   align-items: center;
   gap: 4px;
 }
-main .oaite .oaite__wrap .box .info .name {
+.index main .oaite .oaite__wrap .box .info .name {
   font-weight: bold;
 }
-main .oaite .oaite__wrap .box .info .name::after {
+.index main .oaite .oaite__wrap .box .info .name::after {
   content: "/";
   margin-left: 4px;
   font-weight: normal;
 }
-main .oaite .oaite__wrap .box .info .lciq {
+.index main .oaite .oaite__wrap .box .info .lciq {
   margin-left: 8px;
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
   display: flex;
@@ -909,36 +1367,36 @@ main .oaite .oaite__wrap .box .info .lciq {
   align-items: center;
   align-items: baseline;
 }
-main .oaite .oaite__wrap .box .info .lciq::after {
+.index main .oaite .oaite__wrap .box .info .lciq::after {
   content: "/LCIQ";
   font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
   font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
   margin-left: 4px;
 }
-main .imadoko .mainTitle {
+.index main .imadoko .mainTitle {
   color: #F07884;
 }
-main .imadoko .mainTitle::before {
+.index main .imadoko .mainTitle::before {
   font: var(--fa-font-solid);
   content: "\f3c5";
   color: #F07884;
   font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
 }
-main .imadoko p {
+.index main .imadoko p {
   text-align: center;
   margin-bottom: 40px;
 }
-main .imadoko iframe {
+.index main .imadoko iframe {
   width: 100%;
   aspect-ratio: 16/9;
   height: auto;
 }
 @media screen and (max-width: 768px) {
-  main .imadoko iframe {
+  .index main .imadoko iframe {
     aspect-ratio: 1/1;
   }
 }
-main .cv {
+.index main .cv {
   background-color: #EAF2F4;
   background-image: radial-gradient(white 30%, transparent 30%);
   background-size: 20px 20px;
@@ -949,30 +1407,30 @@ main .cv {
   gap: 16px;
   padding: 40px 0px;
 }
-main .cv__wrap {
+.index main .cv__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main .cv__wrap .catch {
+.index main .cv__wrap .catch {
   text-align: center;
   font-weight: bold;
   color: #004C71;
   margin-bottom: 16px;
 }
-main .cv__wrap button {
+.index main .cv__wrap button {
   width: 50%;
 }
 @media screen and (max-width: 768px) {
-  main .cv__wrap button {
+  .index main .cv__wrap button {
     width: 100%;
   }
 }
-main .cv__wrap button a {
+.index main .cv__wrap button a {
   font-weight: bold;
 }
-main .merit__wrap {
+.index main .merit__wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -980,7 +1438,7 @@ main .merit__wrap {
   gap: 40px;
   margin-top: 40px;
 }
-main .merit__wrap .box {
+.index main .merit__wrap .box {
   width: 100%;
   flex: 1;
   display: grid;
@@ -989,48 +1447,48 @@ main .merit__wrap .box {
   gap: 40px;
 }
 @media screen and (max-width: 768px) {
-  main .merit__wrap .box {
+  .index main .merit__wrap .box {
     grid-template-columns: 1fr;
   }
 }
-main .merit__wrap .box:nth-child(2) .image {
+.index main .merit__wrap .box:nth-child(2) .image {
   order: 2;
 }
 @media screen and (max-width: 768px) {
-  main .merit__wrap .box:nth-child(2) .image {
+  .index main .merit__wrap .box:nth-child(2) .image {
     order: 1;
   }
 }
-main .merit__wrap .box:nth-child(2) .text {
+.index main .merit__wrap .box:nth-child(2) .text {
   order: 1;
 }
 @media screen and (max-width: 768px) {
-  main .merit__wrap .box:nth-child(2) .text {
+  .index main .merit__wrap .box:nth-child(2) .text {
     order: 2;
   }
 }
-main .merit__wrap .box .image img {
+.index main .merit__wrap .box .image img {
   width: 100%;
 }
-main .merit__wrap .box .text .title {
+.index main .merit__wrap .box .text .title {
   font-weight: bold;
   font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
 }
-main .subtitle {
+.index main .subtitle {
   text-align: center;
   margin-top: 24px;
 }
 @media screen and (max-width: 768px) {
-  main .subtitle {
+  .index main .subtitle {
     margin-top: 8px;
   }
 }
-main .subtitle span {
+.index main .subtitle span {
   display: block;
   font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
   text-align: center;
 }
-main .price__wrap {
+.index main .price__wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
@@ -1038,7 +1496,7 @@ main .price__wrap {
   overflow-x: auto;
   padding: 16px;
 }
-main .price__wrap .box {
+.index main .price__wrap .box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1049,45 +1507,45 @@ main .price__wrap .box {
   justify-content: flex-start;
   min-width: 300px;
 }
-main .price__wrap .box .numb {
+.index main .price__wrap .box .numb {
   font-size: clamp(6rem, 5.9346938776rem + 0.2040816327vw, 6.2rem);
   font-weight: bold;
   height: 100px;
 }
-main .price__wrap .box .numb::before {
+.index main .price__wrap .box .numb::before {
   content: "¥";
   font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
   margin-right: 8px;
 }
-main .price__wrap .box .numb span {
+.index main .price__wrap .box .numb span {
   display: block;
   text-align: center;
   font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
   width: 100%;
   font-weight: normal;
 }
-main .price__wrap .box .plan {
+.index main .price__wrap .box .plan {
   font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
   font-weight: bold;
   text-align: center;
 }
-main .price__wrap .box .plan span {
+.index main .price__wrap .box .plan span {
   display: block;
   text-align: center;
   font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
 }
-main .price__wrap .box .disc {
+.index main .price__wrap .box .disc {
   text-align: center;
   font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
 }
-main .price__wrap .box button {
+.index main .price__wrap .box button {
   background-color: #004C71;
   transition: background-color 0.3s ease;
 }
-main .price__wrap .box button:hover {
+.index main .price__wrap .box button:hover {
   background-color: #006ea4;
 }
-main .price__wrap .box button a {
+.index main .price__wrap .box button a {
   color: white;
   display: block;
   font-weight: bold;
@@ -1095,116 +1553,250 @@ main .price__wrap .box button a {
   width: 100%;
   text-align: center;
 }
-main .price__wrap .box ul li {
+.index main .price__wrap .box ul li {
   font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
   margin-bottom: 4px;
 }
-main .price__wrap .box ul li::before {
+.index main .price__wrap .box ul li::before {
   font: var(--fa-font-solid);
   content: "\f00c";
   color: #004C71;
   margin-right: 4px;
 }
-main .price__wrap .free button {
-  background-color: #706C00;
+.index main .price__wrap .free button {
+  background-color: #80b567;
 }
-main .price__wrap .free button:hover {
-  background-color: #a39d00;
+.index main .price__wrap .free button:hover {
+  background-color: #9dc689;
 }
-main .price__wrap .free ul li::before {
-  color: #706C00;
+.index main .price__wrap .free ul li::before {
+  color: #80b567;
 }
-main .price__wrap .advanced button {
+.index main .price__wrap .advanced button {
   background-color: #F07884;
 }
-main .price__wrap .advanced button:hover {
+.index main .price__wrap .advanced button:hover {
   background-color: #f5a6ae;
 }
-main .price__wrap .advanced ul li::before {
+.index main .price__wrap .advanced ul li::before {
   color: #F07884;
 }
-main .security__wrap {
+.index main .security__wrap {
   margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
 }
 @media screen and (max-width: 768px) {
-  main .security__wrap {
+  .index main .security__wrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-main .security__wrap .box {
+.index main .security__wrap .box {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 8px;
 }
-main .security__wrap .box span {
+.index main .security__wrap .box span {
   font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
 }
-main .faq__wrap {
+.index main .faq__wrap {
   margin-top: 40px;
 }
-main .faq__wrap .box {
+.index main .faq__wrap .box {
   margin-bottom: 16px;
 }
-main .faq__wrap .box .q {
+.index main .faq__wrap .box .q {
   padding: 0px 16px;
   width: 100%;
 }
-main .faq__wrap .box .q .title {
+.index main .faq__wrap .box .q .title {
   color: #004C71;
 }
-main .faq__wrap .box .q .title::before {
+.index main .faq__wrap .box .q .title::before {
   content: "Q";
   font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
   font-weight: bold;
   margin-right: 8px;
 }
-main .faq__wrap .box .a {
+.index main .faq__wrap .box .a {
   background-color: #EAF2F4;
   padding: 8px 16px;
   width: 100%;
 }
-main .faq__wrap .box .a .title {
+.index main .faq__wrap .box .a .title {
   color: #F07884;
 }
-main .faq__wrap .box .a .title:hover {
+.index main .faq__wrap .box .a .title:hover {
   cursor: pointer;
 }
-main .faq__wrap .box .a .title::before {
+.index main .faq__wrap .box .a .title::before {
   content: "A";
   font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
   font-weight: bold;
   margin-right: 8px;
 }
-main .faq__wrap .box .a .title::after {
+.index main .faq__wrap .box .a .title::after {
   font: var(--fa-font-solid);
   content: "\f105";
   color: #F07884;
   display: inline-block;
   transition: transform 0.3s ease;
 }
-main .faq__wrap .box .a .title.active::after {
+.index main .faq__wrap .box .a .title.active::after {
   transform: rotate(90deg);
 }
-
-.footer {
+.index .banner.swiper {
+  width: 100%;
+  max-width: 1200px; /* 最大幅を設定（任意） */
+  margin: 0 auto;
+  overflow: hidden;
+}
+.index .banner .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.index .banner .swiper-pagination {
+  position: relative;
+  margin-top: 24px;
+}
+.index .banner .swiper-slide img {
+  width: 100%;
+}
+.index .banner .swiper-slide-prev,
+.index .banner .swiper-slide-next {
+  transform: scale(0.9); /* 少し縮小 */
+  opacity: 0.5; /* 薄く表示 */
+}
+.index .banner .swiper-slide-active {
+  transform: scale(1); /* 通常サイズ */
+  opacity: 1; /* はっきり表示 */
+}
+.index .oaite__loop.swiper {
+  width: 100%;
+  overflow: hidden; /* スライダー外の要素を隠す */
+}
+.index .oaite__loop .swiper-slide {
+  width: auto; /* コンテンツの幅に合わせる */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .nav__wrap .logo {
+  height: auto;
+}
+.index .nav__wrap .logo img {
+  height: 40px;
+}
+.index .nav__wrap .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.index .nav__wrap .menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.index .nav__wrap .menu .login {
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #F07884;
+  color: white;
+}
+.index .nav__wrap .menu .login span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+.index .nav__wrap .menu .login span::before {
+  font: var(--fa-font-solid);
+  content: "\f090";
+  color: white;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.index .nav__sp {
+  justify-content: space-between;
+  align-items: center;
+}
+.index .nav__sp .logo {
+  z-index: 99999;
+}
+.index .nav__sp .logo img {
+  height: 35px;
+}
+.index .nav .nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.index .nav .nav-inner ul {
+  width: 100%;
+  padding-top: 60px;
+}
+.index .nav .nav-inner ul li {
+  border-bottom: 1px #004C71 dotted;
+}
+.index .nav .nav-inner ul li:first-child {
+  border-top: 1px #004C71 dotted;
+}
+.index .nav .nav-inner ul li a::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  font-size: clamp(1.6rem, 1.5346938776rem + 0.2040816327vw, 1.8rem);
+  color: #004C71;
+}
+.index .nav .nav-inner .login {
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #F07884;
+  color: white;
+  margin-bottom: 100px;
+  width: 90%;
+}
+.index .nav .nav-inner .login span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+.index .nav .nav-inner .login span::before {
+  font: var(--fa-font-solid);
+  content: "\f090";
+  color: white;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.index .header__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .footer {
   padding-top: 260px;
 }
 @media screen and (max-width: 768px) {
-  .footer {
+  .index .footer {
     padding-top: 130px;
   }
 }
-.footer .mockup {
+.index .footer .mockup {
   position: relative;
   height: 100px;
   background-color: #EAF2F4;
 }
-.footer .mockup::before {
+.index .footer .mockup::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1216,26 +1808,26 @@ main .faq__wrap .box .a .title.active::after {
   transform-origin: top left;
   z-index: 0;
 }
-.footer .mockup img {
+.index .footer .mockup img {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
-.footer .contents {
+.index .footer .contents {
   background-color: #EAF2F4;
 }
-.footer .sns {
+.index .footer .sns {
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-around;
 }
-.footer .sns img {
+.index .footer .sns img {
   max-height: 50px;
 }
-.footer__wrap {
+.index .footer__wrap {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -1243,36 +1835,1289 @@ main .faq__wrap .box .a .title.active::after {
   align-items: center;
 }
 @media screen and (max-width: 768px) {
-  .footer__wrap {
+  .index .footer__wrap {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 }
-.footer__wrap .logo img {
+.index .footer__wrap .logo img {
   max-width: 200px;
 }
 @media screen and (max-width: 768px) {
-  .footer__wrap .logo img {
+  .index .footer__wrap .logo img {
     display: block;
     margin: 0 auto;
   }
 }
-.footer__wrap ul {
+.index .footer__wrap ul {
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(4, auto);
   gap: 4px;
 }
 @media screen and (max-width: 768px) {
-  .footer__wrap ul {
+  .index .footer__wrap ul {
     grid-auto-flow: row;
     justify-items: center; /* 中央揃えを維持 */
   }
 }
-.footer__wrap ul li a {
+.index .footer__wrap ul li a {
   font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
 }
-.footer .cr {
+.index .footer .cr {
   text-align: center;
   padding: 40px 0px;
+}
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.base .container {
+  max-width: 768px;
+}
+.base .current {
+  opacity: 1 !important;
+}
+.base .mainTitle {
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .base .mainTitle {
+    font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  }
+}
+.base.free-user .profile img {
+  filter: blur(5px);
+}
+.base .header #navigation {
+  opacity: 1;
+  visibility: unset;
+}
+.base .header .nav__wrap {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.base .header .nav__wrap .logo {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.base .header .nav__wrap .logo img {
+  max-height: 30px;
+}
+.base .header .nav__wrap .menu {
+  width: 100%;
+}
+.base .header .nav__wrap .menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  justify-content: space-around;
+  width: 100%;
+}
+.base .header .nav__wrap .menu ul li a {
+  opacity: 0.3;
+  color: #004C71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  transition: opacity 0.3s ease;
+}
+.base .header .nav__wrap .menu ul li a:hover {
+  opacity: 1;
+}
+.base .header .nav__wrap .menu ul .search::before {
+  font: var(--fa-font-solid);
+  content: "\f002";
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+}
+.base .header .nav__wrap .menu ul .imadoko::before {
+  font: var(--fa-font-solid);
+  content: "\f3c5";
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+}
+.base .header .nav__wrap .menu ul .apply::before {
+  font: var(--fa-font-solid);
+  content: "\f5ad";
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+}
+.base .header .nav__wrap .menu ul .message::before {
+  font: var(--fa-font-solid);
+  content: "\f086";
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+}
+.base .header .nav__wrap .menu ul .mypage::before {
+  font: var(--fa-font-solid);
+  content: "\f2bd";
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+}
+.base .header .nav__sp {
+  justify-content: space-between;
+  align-items: center;
+}
+.base .header .nav__sp .logo {
+  z-index: 99999;
+}
+.base .header .nav__sp .logo img {
+  height: 35px;
+}
+.base .header .nav .nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.base .header .nav .nav-inner ul {
+  width: 100%;
+  padding-top: 60px;
+}
+.base .header .nav .nav-inner ul li {
+  border-bottom: 1px #004C71 dotted;
+}
+.base .header .nav .nav-inner ul li:first-child {
+  border-top: 1px #004C71 dotted;
+}
+.base .header .nav .nav-inner ul li a {
+  position: relative;
+  padding-left: 40px;
+  color: #004C71;
+}
+.base .header .nav .nav-inner ul li a::before {
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.base .header .nav .nav-inner ul li a::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  font-size: clamp(1.6rem, 1.5346938776rem + 0.2040816327vw, 1.8rem);
+  color: #004C71;
+}
+.base .header .nav .nav-inner ul li .search::before {
+  font: var(--fa-font-solid);
+  content: "\f002";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.base .header .nav .nav-inner ul li .imadoko::before {
+  font: var(--fa-font-solid);
+  content: "\f3c5";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.base .header .nav .nav-inner ul li .apply::before {
+  font: var(--fa-font-solid);
+  content: "\f5ad";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.base .header .nav .nav-inner ul li .message::before {
+  font: var(--fa-font-solid);
+  content: "\f086";
+  font-size: clamp(1.8rem, 1.7346938776rem + 0.2040816327vw, 2rem);
+}
+.base .header .nav .nav-inner ul li .mypage::before {
+  font: var(--fa-font-solid);
+  content: "\f2bd";
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.base .header .nav .nav-inner .login {
+  padding: 8px 16px;
+  border-radius: 100px;
+  background-color: #F07884;
+  color: white;
+  margin-bottom: 100px;
+  width: 90%;
+}
+.base .header .nav .nav-inner .login span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+.base .header .nav .nav-inner .login span::before {
+  font: var(--fa-font-solid);
+  content: "\f090";
+  color: white;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.base main {
+  padding-top: 120px;
+}
+@media screen and (max-width: 768px) {
+  .base main {
+    padding-top: 80px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .base .footer {
+    padding-top: 40px;
+  }
+}
+.base .footer .contents {
+  background-color: #EAF2F4;
+}
+.base .footer__wrap {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+  align-items: center;
+  padding-top: 40px;
+}
+@media screen and (max-width: 768px) {
+  .base .footer__wrap {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+.base .footer__wrap .logo img {
+  max-width: 200px;
+}
+@media screen and (max-width: 768px) {
+  .base .footer__wrap .logo img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+.base .footer__wrap ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, auto);
+  gap: 4px;
+}
+@media screen and (max-width: 768px) {
+  .base .footer__wrap ul {
+    grid-auto-flow: row;
+    justify-items: center; /* 中央揃えを維持 */
+  }
+}
+.base .footer__wrap ul li a {
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.base .footer .cr {
+  text-align: center;
+  padding: 40px 0px;
+}
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.search main .advice ul li {
+  padding: 16px;
+  border-bottom: 1px dotted #004C71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  justify-content: flex-start;
+}
+.search main .advice ul li::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: var(--fa-font-solid);
+  content: "?";
+  background-color: #004C71;
+  padding: 8px;
+  border-radius: 100%;
+  color: #004C71;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  color: white;
+  aspect-ratio: 1/1;
+  width: 35px;
+  height: 35px;
+}
+.search main .advice ul li::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+}
+.search main .advice ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: block;
+  font-weight: bold;
+  color: #004C71;
+}
+.search main .advice ul li a span {
+  display: block;
+  font-weight: normal;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.search main .advice ul li.task {
+  background-color: #004C71;
+  color: white;
+}
+.search main .advice ul li.task::before {
+  font: var(--fa-font-solid);
+  content: "\f304";
+  background-color: white;
+  padding: 8px;
+  border-radius: 100%;
+  color: #004C71;
+}
+.search main .advice ul li.task a {
+  color: white;
+}
+.search main .lciq {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6AB00;
+  padding: 16px;
+  border-radius: 100px;
+  color: white;
+  gap: 16px;
+}
+.search main .lciq .logo {
+  width: 150px;
+  height: auto;
+}
+.search main .lciq a {
+  color: white;
+}
+.search main .lciq a::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  margin-left: 8px;
+}
+.search main .newface {
+  padding: 16px;
+  background-color: #EAF2F4;
+}
+.search main .newface .head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.search main .newface .head .title {
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  font-weight: bold;
+}
+.search main .newface .head a {
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+.search main .newface .head a::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  margin-left: 8px;
+}
+.search main .newface__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: auto;
+}
+.search main .newface__wrap .box img {
+  width: 100px;
+  height: auto;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.search main .newface__wrap .box p {
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.search main .feed__wrap .box {
+  box-shadow: 0px 0px 10px -5px #777777;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+.search main .feed__wrap .box__wrap {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  padding-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .search main .feed__wrap .box__wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.search main .feed__wrap .box__wrap .image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.search main .feed__wrap .box__wrap .area__wrap {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+  align-items: center;
+  gap: 16px;
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .name__area {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 8px 0px;
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .name__area .name::after {
+  content: "さん";
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .name__area .age::after {
+  content: "歳";
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .info__area {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  font-weight: bold;
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .info__area > div {
+  border-bottom: 1px #004C71 dotted;
+  padding: 4px 8px;
+}
+.search main .feed__wrap .box__wrap .area__wrap .left .info__area .title {
+  font-weight: normal;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+.search main .feed__wrap .box__wrap .area__wrap .right .lciq-point {
+  background: unset;
+  color: #F6AB00;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  font-weight: bold;
+}
+.search main .feed__wrap .box__wrap .area__wrap .right .lciq-point::before {
+  content: "LCIQ";
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  color: black;
+  font-weight: normal;
+}
+.search main .feed__wrap .box__wrap .area p {
+  margin: 16px auto;
+  padding: 16px;
+  background-color: #EAF2F4;
+}
+.search main .feed__wrap .box .btn__area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  padding-top: 0;
+}
+.search main .feed__wrap .box .btn__area button {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  font-weight: bold;
+}
+.search main .feed__wrap .box .btn__area .like::before {
+  font: var(--fa-font-solid);
+  content: "\f004";
+  color: white;
+}
+.search main .feed__wrap .box .btn__area .message {
+  background-color: #F07884;
+}
+.search main .feed__wrap .box .btn__area .message::before {
+  font: var(--fa-font-solid);
+  content: "\f086";
+  color: white;
+}
+
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.mypage main .mainTitle {
+  margin-bottom: 0;
+}
+.mypage main .profile {
+  display: grid;
+  grid-template-columns: 4fr 6fr;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .profile {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+.mypage main .profile .image {
+  background-color: #EAF2F4;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .profile .image {
+    margin: 40px;
+  }
+}
+.mypage main .profile .image img {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.mypage main .profile .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 24px;
+  flex-direction: column;
+}
+.mypage main .profile .text .name {
+  font-weight: bold;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.mypage main .profile .text button {
+  color: white;
+  padding: 8px;
+}
+.mypage main .score {
+  background-color: #EAF2F4;
+}
+.mypage main .score__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap {
+    grid-template-areas: "lciq like" "prof prof"; /* 横長 */
+    grid-template-columns: 1fr 1fr; /* 上の2つを均等に */
+  }
+}
+.mypage main .score__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  gap: 8px;
+  height: 200px;
+  padding: 16px;
+}
+.mypage main .score__wrap .box a.point {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.mypage main .score__wrap .box a.point::after {
+  font: var(--fa-font-solid);
+  content: "\f105";
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  margin-left: 4px;
+}
+.mypage main .score__wrap .box a.point:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+.mypage main .score__wrap .box .title {
+  font-size: clamp(1.6rem, 1.5346938776rem + 0.2040816327vw, 1.8rem);
+  font-weight: normal;
+}
+.mypage main .score__wrap .box .numb {
+  font-size: clamp(4rem, 3.9346938776rem + 0.2040816327vw, 4.2rem);
+  font-weight: bold;
+}
+.mypage main .score__wrap .box button {
+  width: 70%;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap .box button {
+    width: 100%;
+  }
+}
+.mypage main .score__wrap .box button a {
+  padding: 4px;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.mypage main .score__wrap .box button.yellow {
+  background-color: #F6AB00;
+}
+.mypage main .score__wrap .box button.yellow:hover {
+  background-color: #ffbe2a;
+}
+.mypage main .score__wrap .lciq, .mypage main .score__wrap .like {
+  border-right: 1px white solid;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap .lciq, .mypage main .score__wrap .like {
+    border-right: unset;
+  }
+}
+.mypage main .score__wrap .lciq {
+  grid-area: lciq;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap .lciq {
+    border-right: 1px white solid;
+  }
+}
+.mypage main .score__wrap .like {
+  grid-area: like;
+}
+.mypage main .score__wrap .like i {
+  color: #F07884;
+  margin-right: 4px;
+}
+.mypage main .score__wrap .prof {
+  grid-area: prof;
+}
+@media screen and (max-width: 768px) {
+  .mypage main .score__wrap .prof {
+    border-top: 1px white solid;
+  }
+}
+.mypage main .score__wrap .prof .numb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: baseline;
+  gap: 4px;
+}
+.mypage main .score__wrap .prof .numb::after {
+  content: "/10";
+  font-size: clamp(1.6rem, 1.5346938776rem + 0.2040816327vw, 1.8rem);
+  font-weight: normal;
+}
+.mypage main .menu ul li {
+  border-bottom: 1px #004C71 dotted;
+}
+.mypage main .menu ul li a {
+  color: #004C71;
+  display: block;
+  padding: 16px;
+}
+.mypage main .menu ul li a i {
+  margin-right: 8px;
+}
+.mypage main .menu ul li a:hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
