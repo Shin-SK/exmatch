@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // 本番用のベースURLを設定
             const baseURL = window.location.origin.includes("github.io")
-                ? "https://shin-sk.github.io/exmatch/"
-                : "/"; // ローカル環境では "/" に設定
+                ? "https://shin-sk.github.io/exmatch/" // 本番環境
+                : "/"; // ローカル環境
 
             // href="/" のリンクを修正
             document.querySelectorAll('a[href="/"]').forEach(link => {
