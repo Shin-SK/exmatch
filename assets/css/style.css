@@ -2986,6 +2986,8 @@ img {
 }
 .mypage main .profile .text button {
   color: white;
+}
+.mypage main .profile .text button a {
   padding: 8px;
 }
 .mypage main .score {
