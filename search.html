@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const base = document.createElement("base");
+
+            // ローカルと本番でベースURLを切り替え
+            base.href = window.location.origin.includes("github.io")
+                ? "https://shin-sk.github.io/exmatch/"
+                : "/";
+            document.head.appendChild(base);
+        });
+    </script>
 </head>
 <body class="drawer drawer--right base search free-user">
     
