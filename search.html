@@ -11,13 +11,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const base = document.createElement("base");
-
-            // ローカルと本番でベースURLを切り替え
-            base.href = window.location.origin.includes("github.io")
+            // 本番用のベースURLを設定
+            const baseURL = window.location.origin.includes("github.io")
                 ? "https://shin-sk.github.io/exmatch/"
-                : "/";
-            document.head.appendChild(base);
+                : "/"; // ローカル環境では "/" に設定
+
+            // href="/" のリンクを修正
+            document.querySelectorAll('a[href="/"]').forEach(link => {
+                link.setAttribute("href", baseURL);
+                console.log("Updated link to:", link.href); // 修正後のリンクを確認
+            });
         });
     </script>
 </head>
