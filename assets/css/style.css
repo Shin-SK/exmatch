@@ -2085,7 +2085,7 @@ img {
     font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
   }
 }
-.base.free-user .profile img {
+.base.guest-user .profile img {
   filter: blur(5px);
 }
 .base .header #navigation {
