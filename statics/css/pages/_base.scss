@@ -214,6 +214,114 @@
         }
     }
 
+    .price{
+        &__wrap{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            overflow-x: auto;
+            padding: 16px;
+            .box{
+                @include flex();
+                flex-direction: column;
+                gap: 16px;
+                padding: 80px 16px;
+                box-shadow: 0px 0px 15px -10px #777777;
+                justify-content: flex-start;
+                min-width: 300px;
+                .numb{
+                    @include fs(60);
+                    font-weight: bold;
+                    height: 100px;
+                    &::before{
+                        content: '¥';
+                        @include fs(30);
+                        margin-right: 8px;
+                    }
+                    span{
+                        display: block;
+                        text-align: center;
+                        @include fs(10);
+                        width: 100%;
+                        font-weight: normal;
+                    }
+                }
+                .plan{
+                    @include fs(25);
+                    font-weight: bold;
+                    text-align: center;
+                    span{
+                        display: block;
+                        text-align: center;
+                        @include fs(10);
+                    }
+                }
+                .disc{
+                    text-align: center;
+                    @include fs(12);
+                }
+                button{
+                    background-color: g.$mc;
+                    transition: background-color 0.3s ease;
+                    &:hover{
+                        background-color: lighten(g.$mc, 10%);
+                    }
+                    a{
+                        color: white;
+                        display: block;
+                        font-weight: bold;
+                        padding: 8px;
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                ul{
+                    li{
+                        @include fs(12);
+                        margin-bottom: 4px;
+                        &::before{
+                            font: var(--fa-font-solid);
+                            content: '\f00c';
+                            color: g.$mc;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+            }//box
+            .free{
+                button{
+                    background-color: g.$green;
+                    &:hover{
+                        background-color: lighten(g.$green, 10%);
+                    }
+                }
+                ul{
+                    li{
+                        &::before{
+                            color: g.$green;
+                        }
+                    }
+                }
+            }
+            .advanced{
+                button{
+                    background-color: g.$pink;
+                    &:hover{
+                        background-color: lighten(g.$pink, 10%);
+                    }
+                }
+                ul{
+                    li{
+                        &::before{
+                            color: g.$pink;
+                        }
+                    }
+                }
+            }
+        }
+    }//price
+
     .footer{
         @include md{
             padding-top: 40px;
@@ -264,6 +372,113 @@
                 
             }
         }
-      }
-    
+    }
 }
+
+
+$formBg: #f2f2f2;
+.form{
+    &__wrap{
+        .area{
+            margin-bottom: 24px;
+            label{
+                &.title{
+                    padding: 8px;
+                    padding-left: 0;
+                    font-weight: bold;
+                    display: block;
+                }
+                &.required{
+                    &::after{
+                        content: '*';
+                        color: red;
+                        margin-left: 4px;
+                    }
+                }
+            }
+            input{
+                &[type="text"], &[type="email"], &[type="number"], &[type="password"], &[type="tel"], &[type="url"] {
+                    width: 100%;
+                    border: unset;
+                    background-color: $formBg;
+                    padding: 16px;
+                }
+                &::placeholder {
+                    color: #999; /* プレースホルダーのテキストカラー */
+                }
+            }
+            select{
+                border: none;
+                width: 100%;
+                background-color: #f8f8f8;
+                padding: 16px;
+                appearance: none; /* デフォルトの矢印を非表示 */
+                -webkit-appearance: none; /* Safari用 */
+                background-image: url('../img/arrow.svg'); /* カスタム矢印画像 */
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 12px;
+                padding-right: 30px; /* 矢印とテキストが重ならないよう余白を調整 */
+                option{
+                    &:first-child {
+                        color: #999;
+                    }
+                }
+            }
+            &.btnArea{
+                margin-top: 40px;
+                button{
+                    &[type="submit"]{
+                        padding: 8px;
+                        color: white;
+                        font-weight: bold;
+                        @include fs(20);
+                    }
+                }
+                input{
+                    &[type="reset"]{
+                        @include flex();
+                        background-color: unset;
+                        border: unset;
+                        border-bottom: 1px gray solid;
+                        text-align: center;
+                        @include fs(10);
+                        margin: 0 auto;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .caution{
+                @include fs(10);
+                margin-top: 4px;
+            }
+        }//area
+        .radio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            &__wrap {
+              input[type="radio"] {
+                display: none;
+              }
+          
+              &--label {
+                @include flex();
+                padding: 8px 16px;
+                cursor: pointer;
+                background-color: $formBg;
+                border-radius: 8px;
+                transition: background-color 0.3s, color 0.3s;
+                &:hover {
+                  background-color: #eaeaea;
+                }
+              }
+          
+              input[type="radio"]:checked + .radio__wrap--label {
+                background-color: g.$mc;
+                color: white;
+              }
+            }
+        }//.radio
+    }//form__wrap
+}//form

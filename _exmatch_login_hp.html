@@ -1,0 +1,666 @@
+
+
+
+<!-- カスタムテンプレートタグ（友達紹介キャンペーン）-->
+
+
+<!--                    rf_pk は、ReferFriendSetテーブルのid-->
+<!--                    カスタムテンプレートタグ-->
+<!--                    タグの結果を直接出力するのではなく、テンプレート変数に保存することができます。 -->
+<!--                    これは、as引数とそれに続く変数名を使用して行われます。-->
+<!--                    そうすることで、自分に合ったコンテンツを自分で出力できます。-->
+
+<!-- カスタムテンプレートタグ（アンケートキャンペーン）-->
+
+
+
+
+<!-- カスタムテンプレートタグ（イベントキャンペーン）-->
+
+
+
+<!-- カスタムテンプレートタグ（課金体系フラグ）-->
+<!--課金体系フラグ １：定額課金（EXMATCH） ０：従量課金（LIVEMATCH）-->
+
+
+
+
+<!--カスタムテンプレートタグ（メッセージ管理、いいね！管理）受信メッセージ数、いいね！されている数を返す-->
+<!--辞書 context ={'hownice_cnt': "1", 'message_cnt': "2"}		12-->
+
+
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+<script crossorigin="anonymous" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<html lang="ja">
+
+<head>
+
+    <!--    OGPは、記事がSNSでシェアされたときに、適切なぺージのタイトルやアイキャッチ画像、説明文を表示するために必要な設定です。-->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
+        <meta property="og:url" content="https://live-match.biz">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://exmatch.jp/static/img/lm-20.jpg">
+        <meta property="og:title" content="いまココぼっち">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!--    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EV06G6V207"></script>-->
+        <!--    <script>-->
+        <!--      window.dataLayer = window.dataLayer || [];-->
+        <!--      function gtag(){dataLayer.push(arguments);}-->
+        <!--      gtag('js', new Date());-->
+
+        <!--      gtag('config', 'G-EV06G6V207');-->
+        <!--    </script>-->
+
+        <!-- Global site tag (gtag.js) - Google Ads: 1024653268 -->
+        <!--    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1024653268"></script>-->
+        <!--    <script>-->
+        <!--      window.dataLayer = window.dataLayer || [];-->
+        <!--      function gtag(){dataLayer.push(arguments);}-->
+        <!--      gtag('js', new Date());-->
+
+        <!--      gtag('config', 'AW-1024653268');-->
+        <!--    </script>-->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>会員情報登録 | EXMATCH</title>
+
+        <!--    # 以下の２つのｊｓは何故入れたか要調査！20210618-->
+        <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+        <script src="/static/js/bootstrap.bundle.min.js"></script>
+
+        <!-- 郵便番号から住所を自動入力 AjaxZip3 -->
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/fetch-jsonp@1.1.3/build/fetch-jsonp.min.js"></script>
+
+        <!-- Bootstrap core CSS -->
+        <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!--    2021061 以下のjqueryを設定-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
+              rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="/static/css/one-page-wonder.min.css" rel="stylesheet">
+
+        <!-- My style -->
+        <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css">
+
+
+        <style>
+    /* フローティングメニュー */
+
+    #footerFloatingMenu {
+        display: block;
+        width: 100%;
+        position: fixed;
+        left: auto;
+        bottom: 0px;
+        z-index: 9999;
+        text-align: center;
+        padding: 0 auto;
+    }
+
+    #footerFloatingMenu img {
+        max-width: 99%;
+    }
+
+    #footerFloatingMenu {
+        margin: auto;
+    }
+
+    </style>
+
+        <!--<style>-->
+        <!--.image_size_m{-->
+        <!--width: 50px;-->
+        <!--height: auto;-->
+        <!--}-->
+
+        <!--</style>-->
+
+        <style>
+/* いいね！ */
+.hownice {
+  display: inline-block;
+  text-align:end;
+  line-height: 10px;
+}
+
+
+/* 受信メッセージ有り */
+.message-new {
+  display: inline-block;
+  text-align:end;
+  line-height: 10px;
+}
+
+</style>
+
+        <!-- FontAwesome -->
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+        
+
+    </head>
+
+<body>
+
+<!--m_b_f：1<br>-->
+<!--mes_m：<br>-->
+
+<div id="wrapper">
+    <!--    課金体系フラグ １：定額課金（EXMATCH） ０：従量課金（LIVEMATCH）-->
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <!--    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">-->
+        <div class="container">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                <ul class="navbar-nav mr-auto">
+                    <!--                    ログインしたか？-->
+                    
+                    <!--                    index.html、checked.htmlの両画面でメニュー表示を制御（以下のメニューを表示しない）-->
+                    <!--    会員登録しているか？-->
+                    <!--                    匿名ユーザーの場合はメニューを表示しない-->
+                    <!--                    class IndexView(generic.TemplateView):  # ホームページ〇-->
+                    
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/"></a>
+                    </li>
+                    
+                    
+                </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    
+                    
+                    
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    
+
+
+    
+
+    <!--メッセージ表示-->
+    
+
+    
+
+    
+
+<div class="container">
+    <div class="my-div-style w-100">
+<!-- エラーメッセージ表示 -->
+            
+            <br>
+            <h4>無料会員情報登録</h4>
+        <P>初回のみ、無料会員情報を登録してください。後から変更できます。</P>
+        <div class="row my-row-style1">
+            <form action="/ex-member-create/exmatch_login_hp/" method="post">
+
+                <input type="hidden" name="csrfmiddlewaretoken" value="w2elfY28Uax0FlO50vA9RQdHoRBRMk8CnFLuZhAe0tnqFztrVxI5rnxDGTBBWXzO">
+
+                <div class="form-group">
+                    <!--                <label for="formGroup1" style="font-size:13px;">ユーザー種別：</label>-->
+                <input type="hidden" class="form-control form-control-sm" name="group" size="10" value="サービス利用者">
+                </div>
+
+                <div class="form-group">
+                    <!--                <label for="formGroup1" style="font-size:13px;">会員種別：</label>-->
+                <input type="hidden" class="form-control form-control-sm" name="membership_type" size="10" value="無料会員">
+                </div>
+
+                <div class="form-group">
+                    <!--                <label for="formGroup0" style="font-size:13px;">お名前：</label>-->
+                    <input type="hidden" class="form-control form-control-sm" id="formGroup0" placeholder="山田太郎" name="clientname" size="40" value='hidden'>
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup1" style="font-size:13px;">ニックネーム：（必須：nickname）</label>
+                <input type="text" class="form-control form-control-sm" id="formGroup1" placeholder="ぼっち" name="nickname" size="20">
+                <small id="groupHelp10" class="form-text text-muted">例：）ぼっち、 taroumaru123、 太郎丸 <br>※ 任意のニックネームを入力してください。他者と重複しないニックネームかをチェックします。</small>
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup2" style="font-size:13px;">国籍：（必須：nationality）</label>
+                <select class="form-control form-control-sm" id="formGroup2" name="nationality" aria-describedby="groupHelp1">
+                    <option value="" selected>-----</option>
+                    
+                    <option value="日本"> 日本</option>
+                    
+                    <option value="韓国"> 韓国</option>
+                    
+                    <option value="台湾"> 台湾</option>
+                    
+                    <option value="中国"> 中国</option>
+                    
+                    <option value="アメリカ"> アメリカ</option>
+                    
+                    <option value="アルゼンチン"> アルゼンチン</option>
+                    
+                    <option value="イギリス"> イギリス</option>
+                    
+                    <option value="イタリア"> イタリア</option>
+                    
+                    <option value="インド"> インド</option>
+                    
+                    <option value="インドネシア"> インドネシア</option>
+                    
+                    <option value="オーストラリア"> オーストラリア</option>
+                    
+                    <option value="オランダ"> オランダ</option>
+                    
+                    <option value="カナダ"> カナダ</option>
+                    
+                    <option value="ギリシャ"> ギリシャ</option>
+                    
+                    <option value="シンガポール"> シンガポール</option>
+                    
+                    <option value="スペイン"> スペイン</option>
+                    
+                    <option value="タイ"> タイ</option>
+                    
+                    <option value="デンマーク"> デンマーク</option>
+                    
+                    <option value="ドイツ"> ドイツ</option>
+                    
+                    <option value="トルコ"> トルコ</option>
+                    
+                    <option value="ブラジル"> ブラジル</option>
+                    
+                    <option value="フランス"> フランス</option>
+                    
+                    <option value="マレーシア"> マレーシア</option>
+                    
+                    <option value="メキシコ"> メキシコ</option>
+                    
+                    <option value="ロシア"> ロシア</option>
+                    
+                    <option value="その他"> その他</option>
+                    
+                </select>
+                <small id="groupHelp1" class="form-text text-muted">※ ’その他’を選択した場合は、国籍を記入してください。</small>
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup3" style="font-size:13px;">国籍（記入）：</label>
+                <input type="text" class="form-control form-control-sm" id="formGroup3" placeholder="" name="nationality_fill_in" size="25">
+                </div>
+
+                <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="True" checked>
+                  <label class="form-check-label" for="exampleRadios1" style="font-size:13px;">
+                    男性
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="False">
+                  <label class="form-check-label" for="exampleRadios2" style="font-size:13px;">
+                    女性
+                  </label>
+                </div>
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup4" style="font-size:13px;">生年月日：（必須：birthday）（例：2025-01-10）</label>
+                <input type="text" class="form-control form-control-sm" id="formGroup4" placeholder="2025-01-10" name="birthday" size="25">
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup5" style="font-size:14px;">血液型：（必須：blood_type）</label>
+                <select class="form-control form-control-sm" id="formGroup5" name="blood_type" aria-describedby="groupHelp121">
+                    <option value="" selected>-----</option>
+                    
+                    <option value="A型"> A型</option>
+                    
+                    <option value="B型"> B型</option>
+                    
+                    <option value="AB型"> AB型</option>
+                    
+                    <option value="O型"> O型</option>
+                    
+                    <option value="不明"> 不明</option>
+                    
+                </select>
+                <small id="groupHelp121" class="form-text text-muted">※ 血液型を選択してください。</small>
+                </div>
+
+                <div class="form-group">
+                    <!--                <label for="formGroup6" style="font-size:13px;">郵便番号：</label>-->
+                    <input type="hidden" class="form-control form-control-sm" id="formGroup6" placeholder="1810002" name="postalcode" size="40" value="1810002">
+                </div>
+
+                <div class="form-group">
+                <label for="formGroup7" style="font-size:13px;">都道府県：（必須：address1）</label>
+                <select class="form-control form-control-sm" id="formGroup7" name="address1" aria-describedby="groupHelp3">
+                    <option value="" selected>-----</option>
+                    
+                    <option value="北海道"> 北海道</option>
+                    
+                    <option value="青森県"> 青森県</option>
+                    
+                    <option value="岩手県"> 岩手県</option>
+                    
+                    <option value="宮城県"> 宮城県</option>
+                    
+                    <option value="秋田県"> 秋田県</option>
+                    
+                    <option value="山形県"> 山形県</option>
+                    
+                    <option value="福島県"> 福島県</option>
+                    
+                    <option value="茨城県"> 茨城県</option>
+                    
+                    <option value="栃木県"> 栃木県</option>
+                    
+                    <option value="群馬県"> 群馬県</option>
+                    
+                    <option value="埼玉県"> 埼玉県</option>
+                    
+                    <option value="千葉県"> 千葉県</option>
+                    
+                    <option value="東京都"> 東京都</option>
+                    
+                    <option value="神奈川県"> 神奈川県</option>
+                    
+                    <option value="新潟県"> 新潟県</option>
+                    
+                    <option value="富山県"> 富山県</option>
+                    
+                    <option value="石川県"> 石川県</option>
+                    
+                    <option value="福井県"> 福井県</option>
+                    
+                    <option value="山梨県"> 山梨県</option>
+                    
+                    <option value="長野県"> 長野県</option>
+                    
+                    <option value="岐阜県"> 岐阜県</option>
+                    
+                    <option value="静岡県"> 静岡県</option>
+                    
+                    <option value="愛知県"> 愛知県</option>
+                    
+                    <option value="三重県"> 三重県</option>
+                    
+                    <option value="滋賀県"> 滋賀県</option>
+                    
+                    <option value="京都府"> 京都府</option>
+                    
+                    <option value="大阪府"> 大阪府</option>
+                    
+                    <option value="兵庫県"> 兵庫県</option>
+                    
+                    <option value="奈良県"> 奈良県</option>
+                    
+                    <option value="和歌山県"> 和歌山県</option>
+                    
+                    <option value="鳥取県"> 鳥取県</option>
+                    
+                    <option value="島根県"> 島根県</option>
+                    
+                    <option value="岡山県"> 岡山県</option>
+                    
+                    <option value="広島県"> 広島県</option>
+                    
+                    <option value="山口県"> 山口県</option>
+                    
+                    <option value="徳島県"> 徳島県</option>
+                    
+                    <option value="香川県"> 香川県</option>
+                    
+                    <option value="愛媛県"> 愛媛県</option>
+                    
+                    <option value="高知県"> 高知県</option>
+                    
+                    <option value="福岡県"> 福岡県</option>
+                    
+                    <option value="佐賀県"> 佐賀県</option>
+                    
+                    <option value="長崎県"> 長崎県</option>
+                    
+                    <option value="熊本県"> 熊本県</option>
+                    
+                    <option value="大分県"> 大分県</option>
+                    
+                    <option value="宮崎県"> 宮崎県</option>
+                    
+                    <option value="鹿児島県"> 鹿児島県</option>
+                    
+                    <option value="沖縄県"> 沖縄県</option>
+                    
+                </select>
+                <small id="groupHelp3" class="form-text text-muted">※ 都道府県を選択してください。</small>
+                </div>
+
+                <div class="form-group">
+                <input type="hidden" class="form-control form-control-sm" name="address2" size="25" value="三鷹市牟礼">
+                </div>
+
+                <div class="form-group">
+                <input type="hidden" class="form-control form-control-sm" name="address3" size="25" value="９－５－７">
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail1" style="font-size:13px;">Email1：</label>
+                <input name="email1" type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp1" size="100" value=fkshin.004.iei+line@gmail.com readonly>
+                <small id="emailHelp1" class="form-text text-muted">※ 会員登録時のメールアドレスです。</small>
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail2" style="font-size:13px;">Email2：（任意）</label>
+                <input name="email2" type="email" class="form-control form-control-sm" id="exampleInputEmail2" aria-describedby="emailHelp2" placeholder="email@example.jp">
+                <small id="emailHelp2" class="form-text text-muted">※ 追加のメールアドレスがあれば登録してください。</small>
+                </div>
+
+                <div class="form-group">
+                <input type="hidden" class="form-control form-control-sm" name="phone" size="25" value="09012341234">
+                </div>
+
+                <div class="form-group">
+                <input type="hidden" class="form-control form-control-sm" name="inflow_route" size="20" value=hp>
+                </div>
+
+                <div class="form-group">
+                <input type="hidden" class="form-control form-control-sm" name="serviceclient_column_c3" size="100" value=exmatch_login_hp>
+                </div>
+
+
+                <button class="btn btn-primary ml-2 mt-3 mb-3" type="submit">登録</button>
+                <input class="btn btn-danger ml-2 mt-3 mb-3"type="reset" value="リセット">
+            </form>
+
+        </div>
+            <a class="btn btn-success ml-2 mt-3 mb-3" href="/">戻る</a>
+    </div>
+</div>
+
+
+
+<!--<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>-->
+
+<!--<script>-->
+<!--        //「登録」ボタン、「conf」の非表示-->
+<!--        const search = document.getElementById( "search" );-->
+<!--        search.style.display = "none";  // Form画面の非表示-->
+<!--        const conf = document.getElementById( "conf" );-->
+<!--        conf.style.display = "none";  // Form画面の非表示-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+<!--    $(document).on('click', '#search-button', function(event){-->
+
+<!--        const google_key = '';  // '' が必要-->
+
+<!--        var ad1= document.getElementById("ad1");-->
+<!--        var ad2= document.getElementById("ad2");-->
+
+<!--        const conf = document.getElementById( "conf" );-->
+<!--        const search = document.getElementById( "search" );-->
+<!--        conf.style.display = "none";  // Form画面の非表示-->
+<!--        search.style.display = "none";  // Form画面の非表示-->
+
+<!--    address = $('#id_zip_code').val(),-->
+<!--    al = address.length-->
+
+<!--    if (address.length < 7) {-->
+<!--&lt;!&ndash;        alert('正しい郵便番号7桁を入力してください');&ndash;&gt;-->
+<!--            var doc0= document.getElementById("div0");-->
+<!--            doc0.style.color = "red";-->
+<!--            doc0.innerHTML= "正しい郵便番号7桁を入力してください";-->
+<!--            ad1.innerHTML= "";-->
+<!--            ad2.innerHTML= "";-->
+<!--            conf.style.display = "none";  // Form画面の非表示-->
+<!--            search.style.display = "none";  // Form画面の非表示-->
+
+<!--        return false;-->
+<!--        }else{-->
+<!--            var doc0= document.getElementById("div0");-->
+<!--            doc0.innerHTML= "";-->
+
+<!--            }-->
+
+
+<!--        $.ajax({-->
+<!--            url: 'https://maps.googleapis.com/maps/api/geocode/json',-->
+<!--            type: 'GET',-->
+<!--            dataType: 'json',-->
+<!--            data: {-->
+<!--                key: google_key,-->
+<!--                address: $('#id_zip_code').val(),-->
+<!--                language: 'ja'-->
+<!--            }-->
+<!--        }).done(function(data) {-->
+<!--            if (data.status == "OK") {-->
+<!--                var components = data.results[0].address_components;-->
+<!--                if (components.length < 5) {-->
+<!--&lt;!&ndash;                    alert('正しい郵便番号を入力してください');&ndash;&gt;-->
+<!--                    var doc0= document.getElementById("div0");-->
+<!--                    doc0.innerHTML= "正しい郵便番号を入力してください";-->
+<!--                    ad1.innerHTML= "";-->
+<!--                    ad2.innerHTML= "";-->
+<!--                    conf.style.display = "none";  // Form画面の非表示-->
+<!--                    search.style.display = "none";  // Form画面の非表示-->
+
+<!--                    return false;-->
+<!--                }-->
+<!--                if (components.length == 5) {-->
+<!--&lt;!&ndash;                alert('正しい郵便番号です');&ndash;&gt;-->
+<!--                conf.style.display = "flex";  // boxB画面の表示-->
+<!--                search.style.display = "flex";  // boxB画面の表示-->
+<!--                    $('#id_address1').val(components[3].long_name);-->
+<!--                    ad1.innerHTML= components[3].long_name;-->
+<!--                    $('#id_address2').val(components[2].long_name + ' ' + components[1].long_name);-->
+<!--                    $('#id_address3').val(components[2].long_name);-->
+<!--                    // 半角スペースで市区町村住所を区切る-->
+<!--                    ad2.innerHTML= components[2].long_name + ' ' + components[1].long_name;-->
+<!--                } else if (components.length == 6) {-->
+<!--                conf.style.display = "flex";  // boxB画面の表示-->
+<!--                search.style.display = "flex";  // boxB画面の表示-->
+<!--                    $('#id_address1').val(components[4].long_name);-->
+<!--                    ad1.innerHTML= components[4].long_name;-->
+<!--                    $('#id_address2').val(components[3].long_name + ' ' + components[2].long_name);-->
+<!--                    $('#id_address3').val(components[3].long_name);-->
+<!--                    ad2.innerHTML= components[3].long_name + ' ' + components[2].long_name;-->
+<!--                }-->
+<!--            }else{-->
+<!--&lt;!&ndash;            alert('郵便番号が間違っています！住所が見つかりません。');&ndash;&gt;-->
+<!--            var doc0= document.getElementById("div0");-->
+<!--            doc0.style.color = "red";-->
+<!--            doc0.innerHTML= "郵便番号が間違っています！住所が見つかりません。";-->
+<!--            ad1.innerHTML= "";-->
+<!--            ad2.innerHTML= "";-->
+<!--            conf.style.display = "none";  // Form画面の非表示-->
+<!--            search.style.display = "none";  // Form画面の非表示-->
+
+<!--            return false;-->
+<!--            }-->
+
+
+<!--        });-->
+<!--    });-->
+
+
+<!--</script>-->
+
+
+
+    
+
+
+
+    <!--    このBOXで底辺マージンを確保-->
+    <div  style="margin: 0px auto 130px auto;">
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--    以下のjquery-3.4.1.min.jsをコメントアウトした。20210618-->
+    <!--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+
+
+    <!--flaoting menu-->
+    <!--    ログイン中？-->
+    
+    <div id="footerFloatingMenu">
+        <div class="table-responsive-sm">
+            <table class="table table-borderless">
+                <tr style="opacity: 0.7;background-color:white;">
+                    <td>
+                        
+                        <a href="/member-profile-check/68/"><img class="" src="/static/img/new-mes.png" width="60" height=auto title="メッセージ" alt="メッセージ"></a>
+                        
+                    </td>
+                    <td>
+                        
+                        <a href="/member-profile-check/69/"><img class="" src="/static/img/new-hownice.png" width="60" height=auto title="いいね" alt="いいね"></a>
+                        
+                    </td>
+                    <td>
+                        <a href="/member-profile-check/82/"><img class="" src="/static/img/new-search.png" width="60" height=auto title="検索" alt="検索"></a>
+                    </td>
+                    <td>
+                        <a href="/member-profile-check/67/"><img class="" src="/static/img/new-mypage.png" width="60" height=auto title="マイページ" alt="マイページ"></a>
+                    </td>
+                    <td>
+                        <a href="/"><img class="" src="/static/img/new-bocchi.png" width="60" height=auto title="ボッチ店" alt="ボッチ店"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+
+</div>
+
+</body>
+
+</html>

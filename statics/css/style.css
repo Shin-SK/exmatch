@@ -7,6 +7,7 @@
 @import url(https://use.typekit.net/lpz2crc.css);
 @import url(https://use.typekit.net/lpz2crc.css);
 @import url(https://use.typekit.net/lpz2crc.css);
+@import url(https://use.typekit.net/lpz2crc.css);
 html {
   font-size: 62.5%;
 }
@@ -1488,99 +1489,6 @@ img {
   font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
   text-align: center;
 }
-.index main .price__wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  margin-top: 40px;
-  overflow-x: auto;
-  padding: 16px;
-}
-.index main .price__wrap .box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 16px;
-  padding: 80px 16px;
-  box-shadow: 0px 0px 15px -10px #777777;
-  justify-content: flex-start;
-  min-width: 300px;
-}
-.index main .price__wrap .box .numb {
-  font-size: clamp(6rem, 5.9346938776rem + 0.2040816327vw, 6.2rem);
-  font-weight: bold;
-  height: 100px;
-}
-.index main .price__wrap .box .numb::before {
-  content: "¥";
-  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
-  margin-right: 8px;
-}
-.index main .price__wrap .box .numb span {
-  display: block;
-  text-align: center;
-  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
-  width: 100%;
-  font-weight: normal;
-}
-.index main .price__wrap .box .plan {
-  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
-  font-weight: bold;
-  text-align: center;
-}
-.index main .price__wrap .box .plan span {
-  display: block;
-  text-align: center;
-  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
-}
-.index main .price__wrap .box .disc {
-  text-align: center;
-  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
-}
-.index main .price__wrap .box button {
-  background-color: #004C71;
-  transition: background-color 0.3s ease;
-}
-.index main .price__wrap .box button:hover {
-  background-color: #006ea4;
-}
-.index main .price__wrap .box button a {
-  color: white;
-  display: block;
-  font-weight: bold;
-  padding: 8px;
-  width: 100%;
-  text-align: center;
-}
-.index main .price__wrap .box ul li {
-  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
-  margin-bottom: 4px;
-}
-.index main .price__wrap .box ul li::before {
-  font: var(--fa-font-solid);
-  content: "\f00c";
-  color: #004C71;
-  margin-right: 4px;
-}
-.index main .price__wrap .free button {
-  background-color: #80b567;
-}
-.index main .price__wrap .free button:hover {
-  background-color: #9dc689;
-}
-.index main .price__wrap .free ul li::before {
-  color: #80b567;
-}
-.index main .price__wrap .advanced button {
-  background-color: #F07884;
-}
-.index main .price__wrap .advanced button:hover {
-  background-color: #f5a6ae;
-}
-.index main .price__wrap .advanced ul li::before {
-  color: #F07884;
-}
 .index main .security__wrap {
   margin-top: 40px;
   display: grid;
@@ -2261,6 +2169,99 @@ img {
     padding-top: 80px;
   }
 }
+.base .price__wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  overflow-x: auto;
+  padding: 16px;
+}
+.base .price__wrap .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 80px 16px;
+  box-shadow: 0px 0px 15px -10px #777777;
+  justify-content: flex-start;
+  min-width: 300px;
+}
+.base .price__wrap .box .numb {
+  font-size: clamp(6rem, 5.9346938776rem + 0.2040816327vw, 6.2rem);
+  font-weight: bold;
+  height: 100px;
+}
+.base .price__wrap .box .numb::before {
+  content: "¥";
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+  margin-right: 8px;
+}
+.base .price__wrap .box .numb span {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  width: 100%;
+  font-weight: normal;
+}
+.base .price__wrap .box .plan {
+  font-size: clamp(2.5rem, 2.4346938776rem + 0.2040816327vw, 2.7rem);
+  font-weight: bold;
+  text-align: center;
+}
+.base .price__wrap .box .plan span {
+  display: block;
+  text-align: center;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+}
+.base .price__wrap .box .disc {
+  text-align: center;
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+}
+.base .price__wrap .box button {
+  background-color: #004C71;
+  transition: background-color 0.3s ease;
+}
+.base .price__wrap .box button:hover {
+  background-color: #006ea4;
+}
+.base .price__wrap .box button a {
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 8px;
+  width: 100%;
+  text-align: center;
+}
+.base .price__wrap .box ul li {
+  font-size: clamp(1.2rem, 1.1346938776rem + 0.2040816327vw, 1.4rem);
+  margin-bottom: 4px;
+}
+.base .price__wrap .box ul li::before {
+  font: var(--fa-font-solid);
+  content: "\f00c";
+  color: #004C71;
+  margin-right: 4px;
+}
+.base .price__wrap .free button {
+  background-color: #80b567;
+}
+.base .price__wrap .free button:hover {
+  background-color: #9dc689;
+}
+.base .price__wrap .free ul li::before {
+  color: #80b567;
+}
+.base .price__wrap .advanced button {
+  background-color: #F07884;
+}
+.base .price__wrap .advanced button:hover {
+  background-color: #f5a6ae;
+}
+.base .price__wrap .advanced ul li::before {
+  color: #F07884;
+}
 @media screen and (max-width: 768px) {
   .base .footer {
     padding-top: 40px;
@@ -2311,6 +2312,100 @@ img {
   text-align: center;
   padding: 40px 0px;
 }
+.form__wrap .area {
+  margin-bottom: 24px;
+}
+.form__wrap .area label.title {
+  padding: 8px;
+  padding-left: 0;
+  font-weight: bold;
+  display: block;
+}
+.form__wrap .area label.required::after {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+}
+.form__wrap .area input[type=text], .form__wrap .area input[type=email], .form__wrap .area input[type=number], .form__wrap .area input[type=password], .form__wrap .area input[type=tel], .form__wrap .area input[type=url] {
+  width: 100%;
+  border: unset;
+  background-color: #f2f2f2;
+  padding: 16px;
+}
+.form__wrap .area input::-moz-placeholder {
+  color: #999; /* プレースホルダーのテキストカラー */
+}
+.form__wrap .area input::placeholder {
+  color: #999; /* プレースホルダーのテキストカラー */
+}
+.form__wrap .area select {
+  border: none;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 16px;
+  -moz-appearance: none;
+       appearance: none; /* デフォルトの矢印を非表示 */
+  -webkit-appearance: none; /* Safari用 */
+  background-image: url("../img/arrow.svg"); /* カスタム矢印画像 */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  padding-right: 30px; /* 矢印とテキストが重ならないよう余白を調整 */
+}
+.form__wrap .area select option:first-child {
+  color: #999;
+}
+.form__wrap .area.btnArea {
+  margin-top: 40px;
+}
+.form__wrap .area.btnArea button[type=submit] {
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+}
+.form__wrap .area.btnArea input[type=reset] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: unset;
+  border: unset;
+  border-bottom: 1px gray solid;
+  text-align: center;
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  margin: 0 auto;
+  margin-top: 8px;
+}
+.form__wrap .area .caution {
+  font-size: clamp(1rem, 0.9346938776rem + 0.2040816327vw, 1.2rem);
+  margin-top: 4px;
+}
+.form__wrap .radio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+.form__wrap .radio__wrap input[type=radio] {
+  display: none;
+}
+.form__wrap .radio__wrap--label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+.form__wrap .radio__wrap--label:hover {
+  background-color: #eaeaea;
+}
+.form__wrap .radio__wrap input[type=radio]:checked + .radio__wrap--label {
+  background-color: #004C71;
+  color: white;
+}
+
 /* 除算math.divを使うのに必要な記述 */
 html {
   font-size: 62.5%;
@@ -3120,4 +3215,226 @@ img {
   -moz-transition: 0.5s; /* Firefox用 */
   -o-transition: 0.5s; /* Opera用 */
   opacity: 0.5;
+}
+
+/* 除算math.divを使うのに必要な記述 */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: clamp(1.4rem, 1.3346938776rem + 0.2040816327vw, 1.6rem);
+}
+
+body a {
+  color: #0f0f0f;
+}
+
+body a :hover {
+  transition: 0.5s;
+  -webkit-transition: 0.5s; /* Chrome、Safari用 */
+  -moz-transition: 0.5s; /* Firefox用 */
+  -o-transition: 0.5s; /* Opera用 */
+  opacity: 0.5;
+}
+
+body img {
+  max-width: 100%;
+  height: auto;
+}
+
+body .mincho {
+  font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+  font-size: clamp(3rem, 2.9346938776rem + 0.2040816327vw, 3.2rem);
+}
+
+body section {
+  margin-bottom: 40px;
+}
+
+/* 非表示状態 */
+.inactive {
+  display: none;
+  opacity: 0;
+}
+
+/* 表示状態 */
+.active {
+  display: block;
+  opacity: 1;
+}
+
+html {
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+  /*Google Chrome、Safariへの対応*/
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #004C71;
+  border: unset;
+  box-shadow: unset;
+  border-radius: 100px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006ea4;
+}
+
+button a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[data-color=blue] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=blue]:hover {
+  background-color: #004C71 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=blue]:hover * {
+  color: inherit !important;
+}
+
+[data-color=blue]:hover::before, [data-color=blue]:hover::after {
+  color: inherit !important;
+}
+
+[data-color=pink] {
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+[data-color=pink]:hover {
+  background-color: #F07884 !important;
+  border: unset !important;
+  color: white !important;
+  opacity: 1;
+}
+
+[data-color=pink]:hover * {
+  color: inherit !important;
+}
+
+[data-color=pink]:hover::before, [data-color=pink]:hover::after {
+  color: inherit !important;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: normal;
+  text-align: left;
+  zoom: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input[type=button], input[type=text], input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+th, td {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  white-space: nowrap;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: text-bottom;
+  vertical-align: -webkit-baseline-middle;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+.registration .mainTitle {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.registration .subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.registration .pr {
+  margin-bottom: 40px;
+}
+.registration .pr__area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registration .pr__area img {
+  width: 100%;
+  max-width: 500px;
+}
+.registration button a {
+  font-size: clamp(2rem, 1.9346938776rem + 0.2040816327vw, 2.2rem);
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
