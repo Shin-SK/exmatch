@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EXMATCH</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="statics/css/style.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const baseURL = window.location.origin.includes("github.io")
+                ? "https://shin-sk.github.io/exmatch/" // 本番環境
+                : "/"; // ローカル環境
+
+            // href="/" のリンクを修正
+            document.querySelectorAll('a[href="/"]').forEach(link => {
+                link.setAttribute("href", baseURL);
+                console.log("Updated link to:", link.href); // 修正後のリンクを確認
+            });
+        });
+
+    </script>
+</head>
+
+<body class="drawer drawer--right base edit profile">
+
+    <header class="header">
+
+        <div class="header__wrap">
+    
+            <nav id="navigation" class="nav">
+        
+                <div class="nav__wrap d-md-flex d-none">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="statics/img/logo.svg">
+                        </a>
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li><a class="search" href="search.html">さがす</a></li>
+                            <li><a class="imadoko" href="imadoko.html">いまどこ</a></li>
+                            <li><a class="apply" href="apply.html">申込み</a></li>
+                            <li><a class="message" href="message.html">メッセージ</a></li>
+                            <li><a class="mypage" href="mypage.html">マイページ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="nav__sp d-md-none d-flex">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="statics/img/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <button type="button" class="drawer-toggle drawer-hamburger">
+                        <span class="sr-only">toggle navigation</span>
+                        <span class="drawer-hamburger-icon"></span>
+                    </button>
+                </div>
+                <aside class="drawer-nav drawer-close" role="navigation">
+                    <div class="nav-inner drawer-menu">
+                        <ul>
+                            <li><a class="search" href="search.html">さがす</a></li>
+                            <li><a class="imadoko" href="imadoko.html">いまどこ</a></li>
+                            <li><a class="apply" href="apply.html">申込み</a></li>
+                            <li><a class="message" href="message.html">メッセージ</a></li>
+                            <li><a class="mypage" href="mypage.html">マイページ</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </nav>
+
+        </div>
+    </header>
+
+<main class="container">
+    <div class="edit__head">
+        <div class="errorMessage">
+            <!-- エラーメッセージ表示 -->
+        </div>
+       
+        <div class="mainTitle">プロフィール編集</div>
+        <div class="name">シン さん</div>
+    </div><!-- ehit__head -->
+
+    <section class="form">
+        <div class="form__wrap">
+            <form action="https://exmatch.jp/ex-profile-update/29/" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrfmiddlewaretoken" value="ftKiZEYLUCvoWAsGCak6nMvIjbO3looJ3kcwwsyNG8LNYDTbxv65pW1dy7nvtH75">
+
+                <div class="area"> <!-- 自己PR -->
+                    <label for="formGroupPR" class="title required">自己PR</label>
+                    <textarea class="large" id="formGroupPR" name="article" placeholder="例を参考にして、プロフィールを記入してください！"></textarea>
+                    <div class="note">
+                        例：はじめまして、プロフィール見て頂きありがとうございます！<br>
+                        長野県出身、今は都内に住んでいます。<br>
+                        <br>
+                        仕事はIT会社でプログラムエンジニアをしています。<br>
+                        大変な仕事ですが、やりがいがあるので仕事はとても楽しいです。<br>
+                        <br>
+                        性格は、優しい、おおらか、落ち着いていると周りから言われる事が多く、
+                        どちらかというとアウトドア派で、休日はサイクリングをしたり、ゴルフ、ドライブをしてすごしています。<br>
+                        <br>
+                        あと、美味しい料理やお酒が大好きなので、都内のおいしいお店を探索中です！<br>
+                        ぜひ一緒にお酒やご飯を食べられたらいいなぁと。<br>
+                        <br>
+                        よろしくお願いします！ (～500文字)
+                    </div><!-- note -->
+                </div>
+        
+                <div class="area"> <!-- LCIQ診断 -->
+                    <label for="formGroupLCIQDiagnosis" class="title required">LCIQ診断</label>
+                    <div class="media">
+                        <div class="media__wrap">
+                            <label for="formGroupLCIQDiagnosis" class="custom-button">ファイルを選択</label>
+                            <button type="button" id="clearButtonLCIQ">クリア</button>
+                            <input type="file" name="lciq_diagnosis" id="formGroupLCIQDiagnosis" style="display: none;">
+                        </div>
+                        <div class="preview" id="previewLCIQ">
+                            <!-- プレビュー画像がここに表示される -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="area"> <!-- 顔写真 -->
+                    <label for="formGroupFacePhoto" class="title required">顔写真</label>
+                    <div class="media">
+                        <div class="media__wrap">
+                            <label for="formGroupFacePhoto" class="custom-button">ファイルを選択</label>
+                            <button type="button" id="clearButtonFace">クリア</button>
+                            <input type="file" name="face_photo" id="formGroupFacePhoto" style="display: none;">
+                        </div>
+                        <div class="preview" id="previewFace">
+                            <!-- プレビュー画像がここに表示される -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="area"> <!-- 写真1 -->
+                    <label for="formGroupPhoto1" class="title required">写真1</label>
+                    <div class="media">
+                        <div class="media__wrap">
+                            <label for="formGroupPhoto1" class="custom-button">ファイルを選択</label>
+                            <button type="button" id="clearButtonPhoto1">クリア</button>
+                            <input type="file" name="photo1" id="formGroupPhoto1" style="display: none;">
+                        </div>
+                        <div class="preview" id="previewPhoto1">
+                            <!-- プレビュー画像がここに表示される -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="area"> <!-- 写真2 -->
+                    <label for="formGroupPhoto2" class="title required">写真2</label>
+                    <div class="media">
+                        <div class="media__wrap">
+                            <label for="formGroupPhoto2" class="custom-button">ファイルを選択</label>
+                            <button type="button" id="clearButtonPhoto2">クリア</button>
+                            <input type="file" name="photo2" id="formGroupPhoto2" style="display: none;">
+                        </div>
+                        <div class="preview" id="previewPhoto2">
+                            <!-- プレビュー画像がここに表示される -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="area"> <!-- 写真3 -->
+                    <label for="formGroupPhoto3" class="title required">写真3</label>
+                    <div class="media">
+                        <div class="media__wrap">
+                            <label for="formGroupPhoto3" class="custom-button">ファイルを選択</label>
+                            <button type="button" id="clearButtonPhoto3">クリア</button>
+                            <input type="file" name="photo3" id="formGroupPhoto3" style="display: none;">
+                        </div>
+                        <div class="preview" id="previewPhoto3">
+                            <!-- プレビュー画像がここに表示される -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="area"> <!-- 趣味・興味 -->
+                    <label for="formGroupHobby" class="title">趣味・興味</label>
+                    <textarea id="formGroupHobby" name="keyword" placeholder="例：ゴルフ ドライブ サイクリング"></textarea>
+                </div>
+
+                <div class="area"> <!-- こだわり -->
+                    <label for="formGroupCommitment" class="title">こだわり</label>
+                    <textarea id="formGroupCommitment" name="commitment" placeholder="例：国産ウイスキー 国産車"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 嗜好品 -->
+                    <label for="formGroupLuxury" class="title">嗜好品</label>
+                    <textarea id="formGroupLuxury" name="luxury_items" placeholder="例：お酒 コーヒー"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 誕生月日 -->
+                    <label for="formGroupBirthday" class="title">誕生</label>
+                    <input id="formGroupBirthday" name="birthday" type="text" placeholder="例：0418、1005、1120">
+                    <div class="note">※誕生日登録で、誕生日ポッチをGET！</div>
+                </div>
+
+                <div class="area"> <!-- 出身地 -->
+                    <label for="formGroupBirthplace" class="title">出身地</label>
+                    <textarea id="formGroupBirthplace" name="birthplace" placeholder="例：都道府県名 市町村名"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 出没エリア -->
+                    <label for="formGroupHauntingArea" class="title">出没エリア</label>
+                    <textarea id="formGroupHauntingArea" name="haunting_area" placeholder="例：吉祥寺ハモニカ横丁 三鷹 中野飲み屋街"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 資格 -->
+                    <label for="formGroupQualification" class="title">資格</label>
+                    <textarea id="formGroupQualification" name="qualification" placeholder="例：運転免許証 教育職員免許状"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 言語 -->
+                    <label for="formGroupLanguage" class="title">言語</label>
+                    <textarea id="formGroupLanguage" name="language" placeholder="例：日本語 英語"></textarea>
+                </div>
+        
+                <div class="area"> <!-- 学歴 -->
+                    <label for="formGroupEducation" class="title">学歴</label>
+                    <select id="formGroupEducation" name="education">
+                        <option value="">選択してください</option>
+                        <option value="こだわらない">こだわらない</option>
+                        <option value="短大/専門学校/高専卒">短大/専門学校/高専卒</option>
+                        <option value="高校卒">高校卒</option>
+                        <option value="大学卒">大学卒</option>
+                        <option value="大学院卒">大学院卒</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 最終学歴 -->
+                    <label for="formGroupFinalEducation" class="title">最終学歴</label>
+                    <input id="formGroupFinalEducation" name="final_education" type="text" placeholder="例：○○学校">
+                    <div class="note">例：○○学校 (～50文字)</div>
+                </div>
+        
+                <div class="area"> <!-- セクシュアリティ -->
+                    <label for="formGroupSexuality" class="title">セクシュアリティ</label>
+                    <select id="formGroupSexuality" name="sexuality">
+                        <option value="">選択してください</option>
+                        <option value="ストレート">ストレート</option>
+                        <option value="レズビアン">レズビアン</option>
+                        <option value="ゲイ">ゲイ</option>
+                        <option value="バイセクシュアル">バイセクシュアル</option>
+                        <option value="トランスジェンダー">トランスジェンダー</option>
+                    </select>
+                </div>
+        
+                <div class="area"> <!-- 血液型 -->
+                    <label for="formGroupBloodType" class="title">血液型</label>
+                    <select id="formGroupBloodType" name="blood_type">
+                        <option value="">選択してください</option>
+                        <option value="A型">A型</option>
+                        <option value="B型">B型</option>
+                        <option value="O型">O型</option>
+                        <option value="AB型">AB型</option>
+                    </select>
+                </div>
+        
+                <div class="area"> <!-- 年齢 -->
+                    <label for="formGroupAge" class="title">年齢</label>
+                    <select id="formGroupAge" name="age">
+                        <option value="">選択してください</option>
+                        <option value="アラハタ">アラハタ</option>
+                        <option value="アラサー">アラサー</option>
+                        <option value="アラフォー">アラフォー</option>
+                        <option value="アラフィフ">アラフィフ</option>
+                        <option value="アラカン以上">アラカン以上</option>
+                    </select>
+                </div>
+        
+                <div class="area"> <!-- ルックス -->
+                    <label for="formGroupLooks" class="title">ルックス</label>
+                    <select id="formGroupLooks" name="looks">
+                        <option value="">選択してください</option>
+                        <option value="かわいい系">かわいい系</option>
+                        <option value="きれい系">きれい系</option>
+                        <option value="いやし系">いやし系</option>
+                        <option value="セレブ">セレブ</option>
+                        <option value="ビジュアル系">ビジュアル系</option>
+                        <option value="カジュアル系">カジュアル系</option>
+                        <option value="ストリート系">ストリート系</option>
+                        <option value="スポーツ系">スポーツ系</option>
+                        <option value="ワイルド系">ワイルド系</option>
+                        <option value="ジャニーズ系">ジャニーズ系</option>
+                        <option value="お姉様系">お姉様系</option>
+                        <option value="お嬢様系">お嬢様系</option>
+                        <option value="小悪魔系">小悪魔系</option>
+                        <option value="おじさま好み系">おじさま好み系</option>
+                        <option value="ギャル系">ギャル系</option>
+                        <option value="お姉ギャル系">お姉ギャル系</option>
+                        <option value="フェロモン系">フェロモン系</option>
+                        <option value="熟女系">熟女系</option>
+                        <option value="お水系">お水系</option>
+                        <option value="アゲ嬢系">アゲ嬢系</option>
+                        <option value="お笑い系">お笑い系</option>
+                        <option value="秋葉系">秋葉系</option>
+                        <option value="年相応">年相応</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- お酒 -->
+                    <label for="formGroupOsake" class="title">お酒</label>
+                    <select id="formGroupOsake" name="osake">
+                        <option value="">選択してください</option>
+                        <option value="飲む">飲む</option>
+                        <option value="たしなむ程度">たしなむ程度</option>
+                        <option value="ときどき飲む">ときどき飲む</option>
+                        <option value="強い">強い</option>
+                        <option value="大好き">大好き</option>
+                        <option value="弱い">弱い</option>
+                        <option value="飲まない">飲まない</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 性格 -->
+                    <label for="formGroupPersonality" class="title">性格</label>
+                    <select id="formGroupPersonality" name="personality">
+                        <option value="">選択してください</option>
+                        <option value="社交的">社交的</option>
+                        <option value="勤勉">勤勉</option>
+                        <option value="温和">温和</option>
+                        <option value="チャレンジ力が高い">チャレンジ力が高い</option>
+                        <option value="協調性が高い">協調性が高い</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 身長 -->
+                    <label for="formGroupHeight" class="title">身長 ㎝</label>
+                    <select id="formGroupHeight" name="height">
+                        <option value="">選択してください</option>
+                        <option value="～149">～149</option>
+                        <option value="150～154">150～154</option>
+                        <option value="155～159">155～159</option>
+                        <option value="160～164">160～164</option>
+                        <option value="165～169">165～169</option>
+                        <option value="170～174">170～174</option>
+                        <option value="175～179">175～179</option>
+                        <option value="180～184">180～184</option>
+                        <option value="185～">185～</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 体重 -->
+                    <label for="formGroupWeight" class="title">体重 ㎏</label>
+                    <select id="formGroupWeight" name="body_weight">
+                        <option value="">選択してください</option>
+                        <option value="～40">～40</option>
+                        <option value="～45">～45</option>
+                        <option value="～50">～50</option>
+                        <option value="～55">～55</option>
+                        <option value="～60">～60</option>
+                        <option value="～65">～65</option>
+                        <option value="～70">～70</option>
+                        <option value="～75">～75</option>
+                        <option value="～80">～80</option>
+                        <option value="～85">～85</option>
+                        <option value="～90">～90</option>
+                        <option value="91～">91～</option>
+                    </select>
+                </div>
+                
+                <!-- 男性-->
+
+                <div class="area"> <!-- 体型 -->
+                    <label for="formGroupBodyShape" class="title">体型</label>
+                    <select id="formGroupBodyShape" name="body_shape_man">
+                        <option value="">選択してください</option>
+                        <option value="細め">細め</option>
+                        <option value="スレンダー">スレンダー</option>
+                        <option value="普通">普通</option>
+                        <option value="グラマー">グラマー</option>
+                        <option value="ぽっちゃり">ぽっちゃり</option>
+                        <option value="がっしり">がっしり</option>
+                        <option value="マッチョ">マッチョ</option>
+                        <option value="太め">太め</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 結婚歴 -->
+                    <label for="formGroupMarriage" class="title">結婚歴</label>
+                    <select id="formGroupMarriage" name="marriage_history">
+                        <option value="">選択してください</option>
+                        <option value="無">無</option>
+                        <option value="1回">1回</option>
+                        <option value="2回">2回</option>
+                        <option value="3回">3回</option>
+                        <option value="4回以上">4回以上</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 子供有無 -->
+                    <label for="formGroupChildren" class="title">子供有無</label>
+                    <select id="formGroupChildren" name="children">
+                        <option value="">選択してください</option>
+                        <option value="無">無</option>
+                        <option value="1人">1人</option>
+                        <option value="2人">2人</option>
+                        <option value="3人">3人</option>
+                        <option value="4人">4人</option>
+                        <option value="5人以上">5人以上</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 同居人 -->
+                    <label for="formGroupHousemate" class="title">同居人</label>
+                    <select id="formGroupHousemate" name="housemate">
+                        <option value="">選択してください</option>
+                        <option value="一人暮らし">一人暮らし</option>
+                        <option value="実家暮らし">実家暮らし</option>
+                        <option value="友達と一緒">友達と一緒</option>
+                        <option value="家族と同居">家族と同居</option>
+                        <option value="兄弟と一緒">兄弟と一緒</option>
+                        <option value="ペットと一緒">ペットと一緒</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- タバコ -->
+                    <label for="formGroupTobacco" class="title">タバコ</label>
+                    <select id="formGroupTobacco" name="tobacco">
+                        <option value="">選択してください</option>
+                        <option value="吸わない">吸わない</option>
+                        <option value="時々吸う">時々吸う</option>
+                        <option value="電タバ吸う">電タバ吸う</option>
+                        <option value="吸う">吸う</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- ギャンブル -->
+                    <label for="formGroupGambling" class="title">ギャンブル</label>
+                    <select id="formGroupGambling" name="gambling">
+                        <option value="">選択してください</option>
+                        <option value="しない">しない</option>
+                        <option value="競馬">競馬</option>
+                        <option value="競輪">競輪</option>
+                        <option value="競艇">競艇</option>
+                        <option value="オートレース">オートレース</option>
+                        <option value="カジノゲーム">カジノゲーム</option>
+                        <option value="オンラインカジノ">オンラインカジノ</option>
+                        <option value="宝くじ">宝くじ</option>
+                        <option value="パチンコ・パチスロ">パチンコ・パチスロ</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- ギャンブル（その他） -->
+                    <label for="formGroupGamblingFill" class="title">ギャンブル（その他）</label>
+                    <input id="formGroupGamblingFill" name="gambling_fill_in" type="text" placeholder="例：麻雀">
+                </div>
+
+                <div class="area"> <!-- 職業 -->
+                    <label for="formGroupOccupation" class="title">職業</label>
+                    <select id="formGroupOccupation" name="occupation">
+                        <option value="">選択してください</option>
+                        <option value="経営者・会社役員">経営者・会社役員</option>
+                        <option value="会社員・OL">会社員・OL</option>
+                        <option value="サービス業">サービス業</option>
+                        <option value="アパレル・ショップ">アパレル・ショップ</option>
+                        <option value="販売関連">販売関連</option>
+                        <option value="福祉・介護関連">福祉・介護関連</option>
+                        <option value="飲食・食品関連">飲食・食品関連</option>
+                        <option value="技術者・専門職">技術者・専門職</option>
+                        <option value="IT・Web関連">IT・Web関連</option>
+                        <option value="美容関連">美容関連</option>
+                        <option value="教育・保育関連">教育・保育関連</option>
+                        <option value="流通関連">流通関連</option>
+                        <option value="建築関連">建築関連</option>
+                        <option value="金融・保険関連">金融・保険関連</option>
+                        <option value="交通・旅行関連">交通・旅行関連</option>
+                        <option value="広告関連">広告関連</option>
+                        <option value="公務員">公務員</option>
+                        <option value="弁護士・会計士">弁護士・会計士</option>
+                        <option value="医師・医療関係">医師・医療関係</option>
+                        <option value="技能・モデル">技能・モデル</option>
+                        <option value="農林漁業関連">農林漁業関連</option>
+                        <option value="ブライダル">ブライダル</option>
+                        <option value="クリエイティブ">クリエイティブ</option>
+                        <option value="受付・秘書">受付・秘書</option>
+                        <option value="マスコミ">マスコミ</option>
+                        <option value="パート・アルバイト">パート・アルバイト</option>
+                        <option value="家事手伝い">家事手伝い</option>
+                        <option value="専業主婦・専業主夫">専業主婦・専業主夫</option>
+                        <option value="学生">学生</option>
+                        <option value="無職">無職</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 職種 -->
+                    <label for="formGroupJobTitle" class="title">職種</label>
+                    <select id="formGroupJobTitle" name="job_title">
+                        <option value="">選択してください</option>
+                        <option value="国家公務員">国家公務員</option>
+                        <option value="地方公務員">地方公務員</option>
+                        <option value="IT関連">IT関連</option>
+                        <option value="教育関連">教育関連</option>
+                        <option value="飲食関連">飲食関連</option>
+                        <option value="金融・保険関連">金融・保険関連</option>
+                        <option value="美容関連">美容関連</option>
+                        <option value="医療関連">医療関連</option>
+                        <option value="介護福祉関連">介護福祉関連</option>
+                        <option value="旅行関連">旅行関連</option>
+                        <option value="建築関連">建築関連</option>
+                        <option value="サービス関連">サービス関連</option>
+                        <option value="メディア関連">メディア関連</option>
+                        <option value="芸能・モデル関連">芸能・モデル関連</option>
+                        <option value="学生">学生</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 運転免許証 -->
+                    <label for="formGroupDriversLicense" class="title">運転免許証</label>
+                    <select id="formGroupDriversLicense" name="drivers_license">
+                        <option value="">選択してください</option>
+                        <option value="有">有</option>
+                        <option value="無">無</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 年収 -->
+                    <label for="formGroupAnnualIncome" class="title">年収</label>
+                    <select id="formGroupAnnualIncome" name="annual_income">
+                        <option value="">選択してください</option>
+                        <option value="こだわらない">こだわらない</option>
+                        <option value="～400">～400</option>
+                        <option value="～500">～500</option>
+                        <option value="～600">～600</option>
+                        <option value="～700">～700</option>
+                        <option value="～800">～800</option>
+                        <option value="～900">～900</option>
+                        <option value="901～">901～</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 祖父 -->
+                    <label for="formGroupGrandfather" class="title">祖父</label>
+                    <select id="formGroupGrandfather" name="grandfather">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 祖母 -->
+                    <label for="formGroupGrandmother" class="title">祖母</label>
+                    <select id="formGroupGrandmother" name="grandmother">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 父 -->
+                    <label for="formGroupFather" class="title">父</label>
+                    <select id="formGroupFather" name="father">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 母 -->
+                    <label for="formGroupMother" class="title">母</label>
+                    <select id="formGroupMother" name="mother">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 兄 -->
+                    <label for="formGroupOlderBrother" class="title">兄</label>
+                    <select id="formGroupOlderBrother" name="older_brother">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="10代">10代</option>
+                        <option value="20代">20代</option>
+                        <option value="30代">30代</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 弟 -->
+                    <label for="formGroupYoungerBrother" class="title">弟</label>
+                    <select id="formGroupYoungerBrother" name="younger_brother">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="10代">10代</option>
+                        <option value="20代">20代</option>
+                        <option value="30代">30代</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 姉 -->
+                    <label for="formGroupOlderSister" class="title">姉</label>
+                    <select id="formGroupOlderSister" name="older_sister">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="10代">10代</option>
+                        <option value="20代">20代</option>
+                        <option value="30代">30代</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+                
+                <div class="area"> <!-- 妹 -->
+                    <label for="formGroupYoungerSister" class="title">妹</label>
+                    <select id="formGroupYoungerSister" name="younger_sister">
+                        <option value="">選択してください</option>
+                        <option value="いない">いない</option>
+                        <option value="10代">10代</option>
+                        <option value="20代">20代</option>
+                        <option value="30代">30代</option>
+                        <option value="40代">40代</option>
+                        <option value="50代">50代</option>
+                        <option value="60代">60代</option>
+                        <option value="70代">70代</option>
+                        <option value="80代">80代</option>
+                        <option value="90代">90代</option>
+                        <option value="100代">100代</option>
+                    </select>
+                </div>
+
+                <div class="area"> <!-- 身分証明書 -->
+                    <label for="formGroupIdentification" class="title">身分証明書</label>
+                    <input id="formGroupIdentification" name="identification" type="text" value="無" readonly>
+                </div>
+                
+                <div class="area"> <!-- 収入証明書 -->
+                    <label for="formGroupProofIncome" class="title">収入証明書</label>
+                    <input id="formGroupProofIncome" name="proof_income" type="text" value="無" readonly>
+                </div>
+                
+                <div class="area"> <!-- 独身証明書 -->
+                    <label for="formGroupSinglenessCertificate" class="title">独身証明書</label>
+                    <input id="formGroupSinglenessCertificate" name="singleness_certificate" type="text" value="無" readonly>
+                </div>
+                
+                <div class="area"> <!-- 会員認定 -->
+                    <label for="formGroupMembershipCertification" class="title">会員認定</label>
+                    <input id="formGroupMembershipCertification" name="membership_certification" type="text" value="　" readonly>
+                    <div class="note">ゴールドの会員認定はされていません！</div>
+                </div>
+
+                <!-- 以下は、hiddenで送信 -->
+
+                <div class="area"> <!-- 国籍（hidden） -->
+                    <input type="hidden" id="formGroupNationality" name="nationality" value="日本" readonly>
+                </div>
+                
+                <div class="area"> <!-- 都道府県（hidden） -->
+                    <input type="hidden" id="formGroupAddress1" name="address1" value="神奈川県" readonly>
+                </div>
+                
+                <div class="area"> <!-- 生年月日（hidden） -->
+                    <input type="hidden" id="formGroupBirthday" name="birthday1" value="1987-03-14" readonly>
+                </div>
+                
+                <div class="area"> <!-- 年齢（hidden） -->
+                    <input type="hidden" id="formGroupAge" name="age1" value="37" readonly>
+                </div>
+
+                <div class="area btnArea"> <!-- 更新ボタン -->
+                        <button type="submit">更新</button>
+                        <button class="back">
+                            <a href="https://exmatch.jp/ex-profile-detail/29/">戻る</a>
+                        </button>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="contents">
+        <div class="container">
+            <div class="footer__wrap">
+                <div class="logo"><a href="/"><img src="statics/img/logo.svg" alt=""></a></div>
+                <ul>
+                    <li><a href="/">会社概要</a></li>
+                    <li><a href="/">利用規約</a></li>
+                    <li><a href="/">安心・安全の取り組みとガイド</a></li>
+                    <li><a href="/">コミュニティガイドライン</a></li>
+                    <li><a href="/">プライバシーポリシー</a></li>
+                    <li><a href="/">クッキーポリシー</a></li>
+                    <li><a href="/">クッキー設定</a></li>
+                    <li><a href="/">特定商取引法に基づく表示</a></li>
+                    <li><a href="/">ヘルプ</a></li>
+                    <li><a href="/">法人･自治体向けサービス</a></li>
+                    <li><a href="/">採用サイト</a></li>
+                    <li><a href="/">記事提供元一覧</a></li>
+                </ul>
+            </div>
+            <div class="cr"><a href="/">&copy; 2024 EXMATCH</a></div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+<script src="https://kit.fontawesome.com/66f29bbc2b.js" crossorigin="anonymous"></script>
+
+<script src="statics/js/loop.js"></script>
+<script src="statics/js/script.js"></script>
+</body>
+</html>

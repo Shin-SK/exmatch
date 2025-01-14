@@ -124,3 +124,33 @@ document.querySelectorAll('.nav__wrap .menu ul li a').forEach(link => {
         link.classList.add('current');
     }
 });
+
+
+//ファイル選択のプレビュー表示
+function setupPreview(inputId, previewId, clearButtonId) {
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
+    const clearButton = document.getElementById(clearButtonId);
+
+    input.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.innerHTML = `<img src="${e.target.result}" alt="プレビュー画像" style="max-width: 100%; height: auto;">`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    clearButton.addEventListener('click', function() {
+        input.value = '';
+        preview.innerHTML = '';
+    });
+}
+
+setupPreview('formGroupLCIQDiagnosis', 'previewLCIQ', 'clearButtonLCIQ');
+setupPreview('formGroupFacePhoto', 'previewFace', 'clearButtonFace');
+setupPreview('formGroupPhoto1', 'previewPhoto1', 'clearButtonPhoto1');
+setupPreview('formGroupPhoto2', 'previewPhoto2', 'clearButtonPhoto2');
+setupPreview('formGroupPhoto3', 'previewPhoto3', 'clearButtonPhoto3');
